@@ -27,12 +27,11 @@ export class ListarProductosComponent {
   ngOnInit() : void {
     this.productoService.listarProductos().subscribe(
       data => {
-
-        console.log(this.productos);
-
         this.productos = data;
         this.titulo = 'Listado de productos';
         this.cargoLista = true;
+
+        console.log(this.productos);
       }
     );
   }

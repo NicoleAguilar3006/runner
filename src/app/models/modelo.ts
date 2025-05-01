@@ -13,8 +13,8 @@ export interface Modelo {
     idMrc: number;
     idPrn: number;
     idMtl: number;
-    objCategoria: Categoria;
-    objMarca: Marca;
-    objPersona: Persona;
-    objMaterial: Material;
+    categoria: Categoria;
+    marca: Marca;
+    persona: Persona;
+    material: Material;
 }

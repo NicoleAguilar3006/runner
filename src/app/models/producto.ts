@@ -8,7 +8,7 @@ export interface Producto {
     idClr: number;
     idTll: number;
     idMdl: number;
-    objColor: Color;
-    objTalla: Talla;
-    objModelo: Modelo;
+    color: Color;
+    talla: Talla;
+    modelo: Modelo;
 }

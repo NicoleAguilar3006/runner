@@ -21,14 +21,14 @@
           <tr *ngFor="let producto of productos.Productos">
             <th scope="row">{{producto.id}}</th>
             <td>{{producto.stock}}</td>
-            <td>{{producto.objColor.nombre}}</td>
-            <td>{{producto.objTalla.nombre}}</td>
-            <td>{{producto.objModelo.descripcion}}</td>
-            <td>{{producto.objModelo.precio}}</td>
-            <td>{{producto.objModelo.objCategoria.nombre}}</td>
-            <td>{{producto.objModelo.objMarca.nombre}}</td>
-            <td>{{producto.objModelo.objPersona.nombre}}</td>
-            <td>{{producto.objModelo.objMaterial.nombre}}</td>
+            <td>{{producto.color.nombre}}</td>
+            <td>{{producto.talla.nombre}}</td>
+            <td>{{producto.modelo.descripcion}}</td>
+            <td>{{producto.modelo.precio}}</td>
+            <td>{{producto.modelo.categoria.nombre}}</td>
+            <td>{{producto.modelo.marca.nombre}}</td>
+            <td>{{producto.modelo.persona.nombre}}</td>
+            <td>{{producto.modelo.material.nombre}}</td>
             <td><a href="" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
           </tr>
         </tbody>
