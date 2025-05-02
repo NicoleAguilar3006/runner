@@ -1,0 +1,7 @@
+<form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+  <input type="email" placeholder="Correo" formControlName="correo" />
+  <input type="password" placeholder="Contraseña" formControlName="contrasenia" />
+  <button type="submit">Iniciar sesión</button>
+</form>
+
+<div *ngIf="errorMessage" style="color:red;">{{ errorMessage }}</div>

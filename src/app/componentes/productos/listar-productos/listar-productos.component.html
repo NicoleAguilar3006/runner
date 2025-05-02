@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let producto of productos.Productos">
+          <tr *ngFor="let producto of productos.response">
             <th scope="row">{{producto.id}}</th>
             <td>{{producto.stock}}</td>
             <td>{{producto.color.nombre}}</td>

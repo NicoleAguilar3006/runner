@@ -1,4 +1,4 @@
-export interface Marca {
+export interface Talla {
     id: number;
     nombre: string;
 }

@@ -1,6 +1,6 @@
-import { Color } from "./color";
-import { Modelo } from "./modelo";
-import { Talla } from "./talla";
+import { Color } from "../color/color";
+import { Modelo } from "../modelo/modelo";
+import { Talla } from "../talla/talla";
 
 export interface Producto {
     id: number;
