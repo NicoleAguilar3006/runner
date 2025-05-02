@@ -1,28 +1,32 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Producto } from '../../../models/producto';
+import { RouterModule } from '@angular/router';
 import { ProductoService } from '../../../service/producto.service';
-import { ProductoResponse } from '../../../models/producto-response';
+import { Success } from '../../../models/success';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-productos',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './listar-productos.component.html',
   styleUrl: './listar-productos.component.css'
 })
 export class ListarProductosComponent {
 
   titulo: string = "Cargando...";
-  productos: ProductoResponse = {
-    mensaje: '',
-    fecha: new Date(),
-    status: '',
-    Productos: []
+  productos: Success = {
+    timestamp: new Date(),
+    status: 0,
+    success: '',
+    response: [],
   };
-  
   cargoLista: boolean = false;
+  mensajeConfirmacion: string = '';
 
-  constructor(private productoService: ProductoService) { }
+  constructor(
+    private productoService: ProductoService,   
+    private router: Router,
+  ) { }
 
   ngOnInit() : void {
     this.productoService.listarProductos().subscribe(
@@ -34,5 +38,20 @@ export class ListarProductosComponent {
         console.log(this.productos);
       }
     );
+  }
+
+  eliminarProducto(id:string): void {
+    if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+    this.productoService.eliminar(id).subscribe(
+      (response) => {
+        this.mensajeConfirmacion = 'Producto eliminado con éxito'; 
+        console.log(response);
+        this.ngOnInit();
+      },
+      (error) => {
+        console.error('Error al eliminar el producto:', error);
+      }
+    );
+  }
   }
 }

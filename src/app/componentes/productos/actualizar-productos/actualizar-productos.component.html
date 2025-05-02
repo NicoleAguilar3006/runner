@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>Actualizar Producto</h2>
+  
+    <div *ngIf="mensajeConfirmacion" class="alert alert-success">
+      {{ mensajeConfirmacion }}
+    </div>
+  
+    <form (ngSubmit)="actualizarProducto()">
+      <div class="mb-3">
+        <label for="stock" class="form-label">Stock</label>
+        <input type="number" id="stock" class="form-control" [(ngModel)]="producto.stock" name="stock" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="color" class="form-label">Color</label>
+        <select id="color" class="form-select" [(ngModel)]="producto.idClr" name="idClr" required>
+          <option value="0" disabled>Seleccione...</option>
+          <option *ngFor="let color of colores" [value]="color.id" [selected]="color.id === producto.idClr">{{ color.nombre }}</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="talla" class="form-label">Talla</label>
+        <select id="talla" class="form-select" [(ngModel)]="producto.idTll" name="idTll" required>
+          <option value="0" disabled>Seleccione...</option>
+          <option *ngFor="let talla of tallas" [value]="talla.id" [selected]="talla.id === producto.idTll">{{ talla.nombre }}</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <select id="modelo" class="form-select" [(ngModel)]="producto.idMdl" name="idMdl" required>
+          <option value="0" disabled>Seleccione...</option>
+          <option *ngFor="let modelo of modelos" [value]="modelo.id" [selected]="modelo.id === producto.idMdl">{{ modelo.descripcion }}</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+  </div>
+  

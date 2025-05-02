@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>{{titulo}}</h2>
+    <div *ngIf="cargoLista">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Categoría</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categorias of categorias.response">
+            <th scope="row">{{categorias.id}}</th>
+            <td>{{categorias.nombre}}</td>
+            <td><a href="" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
