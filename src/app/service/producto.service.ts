@@ -14,7 +14,7 @@ export class ProductoService {
   constructor(private http: HttpClient) { }
 
   listarProductos(): Observable<Success> {
-    return this.http.get<Success>(this.urlBase + "/listado");
+    return this.http.get<Success>(this.urlBase);
   }
 
   public registrar(producto: ProductoRegistrar): Observable<Success> {

@@ -17,6 +17,6 @@ export class CategoriaService {
     }
 
     public registrar(categoria: Categoria): Observable<Success> {
-        return this.http.post<Success>(this.urlBase + "/crear", categoria);
+        return this.http.post<Success>(this.urlBase, categoria);
       }
 }

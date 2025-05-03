@@ -11,6 +11,6 @@ export class TallaService {
   constructor(private http: HttpClient) {}
 
   listarTallas(): Observable<Success> {
-    return this.http.get<Success>(this.urlBase + "/listado");
+    return this.http.get<Success>(this.urlBase);
     }
 }

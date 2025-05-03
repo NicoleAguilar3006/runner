@@ -21,6 +21,6 @@ export class MarcaService {
   }
 
   public registrar(marca: Marca): Observable<Success> {
-          return this.http.post<Success>(this.urlBase + "/crear", marca);
+          return this.http.post<Success>(this.urlBase, marca);
         }
 }

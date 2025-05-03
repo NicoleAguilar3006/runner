@@ -74,9 +74,8 @@ export class ListarModelosComponent {
       alert("Ingrese un ID válido para la marca.");
       return;
     }
-    
-      listarPorIdMarca(): void {
-        this.modeloService.listarPorIdMarca(this.idMdlFiltro).subscribe({
+  
+    this.modeloService.listarPorIdMarca(this.idMdlFiltro).subscribe({
       next: (resp) => {
         this.modelos = resp; 
         this.cargoLista = true;
@@ -91,6 +90,7 @@ export class ListarModelosComponent {
       }
     });
   }
+
   eliminarModelo(id:string): void {
     if (confirm('¿Estás seguro de que quieres eliminar este modelo?')) {
     this.modeloService.eliminar(id).subscribe(
@@ -105,6 +105,4 @@ export class ListarModelosComponent {
     );
   }
   }
-
-
 }

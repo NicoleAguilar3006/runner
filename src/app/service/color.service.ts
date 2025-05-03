@@ -11,6 +11,6 @@ export class ColorService {
   constructor(private http: HttpClient) {}
 
   listarColores(): Observable<Success> {
-    return this.http.get<Success>(this.urlBase + "/listado");
+    return this.http.get<Success>(this.urlBase);
     }
 }
