@@ -1,3 +1,4 @@
+
 import { Routes } from '@angular/router';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ListarProductosComponent } from './componentes/productos/listar-productos/listar-productos.component';
@@ -5,6 +6,9 @@ import { ListarModelosComponent } from './componentes/modelo/listar-modelos/list
 import { ListarCategoriasComponent } from './componentes/categorias/listar-categorias/listar-categorias.component';
 import { RegistrarProductosComponent } from './componentes/productos/registrar-productos/registrar-productos.component';
 import { ActualizarProductosComponent } from './componentes/productos/actualizar-productos/actualizar-productos.component';
+import { RegistrarModelosComponent } from './componentes/modelo/registrar-modelo/registrar-modelo.component'; 
+import { ActualizarModeloComponent } from './componentes/modelo/actualizar-modelo/actualizar-modelo.component';
+
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent },
@@ -13,6 +17,17 @@ export const routes: Routes = [
     { path: 'listadoCategorias', component: ListarCategoriasComponent}, 
     { path: 'registroProductos', component: RegistrarProductosComponent}, 
     { path: 'actualizar/:id', component: ActualizarProductosComponent },
+    { path: 'registrarModelos', component: RegistrarModelosComponent }, 
+    { path: 'actualizarModelo/:id', component: ActualizarModeloComponent }, 
     // otras rutas
     {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
+
+
+
+
+
+
+
+
+

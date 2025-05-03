@@ -13,6 +13,6 @@ export class CategoriaService {
   constructor(private http: HttpClient) {}
 
   listarCategorias(): Observable<Success> {
-    return this.http.get<Success>(this.urlBase + "/listado");
+    return this.http.get<Success>(this.urlBase );
     }
 }
