@@ -41,8 +41,15 @@
             <td>{{modelo.marca.nombre}}</td>
             <td>{{modelo.persona.nombre}}</td>
             <td>{{modelo.material.nombre}}</td>
-            <td><a href="" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
+
+            <td>
+              <a [routerLink]="['/actualizarModelo', modelo.id]" class="btn btn-outline-primary">
+                <i class="fa-solid fa-pen-to-square"></i> Editar
+              </a>
+            </td> 
+
             <td><button class="btn btn-outline-danger" (click)="eliminarModelo(modelo.id)"><i class="fa-solid fa-trash"></i> Eliminar</button></td>
+
           </tr>
         </tbody>
       </table>
