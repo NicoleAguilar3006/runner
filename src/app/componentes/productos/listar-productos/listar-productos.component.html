@@ -1,43 +1,60 @@
 <div class="container">
-    <h2>{{titulo}}</h2>
-    <div *ngIf="cargoLista">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Código</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Color</th>
-            <th scope="col">Talla</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Persona</th>
-            <th scope="col">Material</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let producto of productos.response">
-            <th scope="row">{{producto.id}}</th>
-            <td>{{producto.stock}}</td>
-            <td>{{producto.color.nombre}}</td>
-            <td>{{producto.talla.nombre}}</td>
-            <td>{{producto.modelo.descripcion}}</td>
-            <td>{{producto.modelo.precio}}</td>
-            <td>{{producto.modelo.categoria.nombre}}</td>
-            <td>{{producto.modelo.marca.nombre}}</td>
-            <td>{{producto.modelo.persona.nombre}}</td>
-            <td>{{producto.modelo.material.nombre}}</td>
-            <td>
-              <a [routerLink]="['/actualizar', producto.id]" class="btn btn-outline-primary">
-                <i class="fa-solid fa-pen-to-square"></i> Editar
-              </a>
-            </td>                       
-            <td><button class="btn btn-outline-danger" (click)="eliminarProducto(producto.id)"><i class="fa-solid fa-trash"></i> Eliminar</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <h2>{{titulo}}</h2>
+  <div *ngIf="cargoLista">
+
+    <div class="mb-3 row">
+      <label for="idMdl" class="col-form-label col-sm-2">Filtrar por Modelo:</label>
+      <div class="col-sm-6">
+        <select class="form-control" [(ngModel)]="idMdlFiltro" id="idMdl">
+          <option value="0" disabled>Selecciona un modelo</option>
+          <option *ngFor="let modelo of modelos" [value]="modelo.id">{{ modelo.descripcion }}</option>
+        </select>
+      </div>
+      
+      <div class="col-sm-4 d-flex">
+        <button class="btn btn-primary me-2" (click)="filtrarPorModelo()">Filtrar</button>
+        <button class="btn btn-secondary" (click)="mostrarTodosLosProductos()" [disabled]="!filtroAplicado">Volver a lista de productos</button>
+      </div>
+    </div>    
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Stock</th>
+          <th scope="col">Color</th>
+          <th scope="col">Talla</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Categoria</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Persona</th>
+          <th scope="col">Material</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos.response">
+          <th scope="row">{{producto.id}}</th>
+          <td>{{producto.stock}}</td>
+          <td>{{producto.color.nombre}}</td>
+          <td>{{producto.talla.nombre}}</td>
+          <td>{{producto.modelo.descripcion}}</td>
+          <td>{{producto.modelo.precio}}</td>
+          <td>{{producto.modelo.categoria.nombre}}</td>
+          <td>{{producto.modelo.marca.nombre}}</td>
+          <td>{{producto.modelo.persona.nombre}}</td>
+          <td>{{producto.modelo.material.nombre}}</td>
+          <td>
+            <a [routerLink]="['/actualizar', producto.id]" class="btn btn-outline-primary">
+              <i class="fa-solid fa-pen-to-square"></i> Editar
+            </a>
+          </td>
+          <td><button class="btn btn-outline-danger" (click)="eliminarProducto(producto.id)"><i
+                class="fa-solid fa-trash"></i> Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>

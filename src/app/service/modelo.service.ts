@@ -14,4 +14,12 @@ export class ModeloService {
   listarModelos(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
     }
+
+    public eliminar(id: string): Observable<Success> {
+      return this.http.delete<Success>(this.urlBase + `/${id}`);
+    } 
+
+    public listarPorIdMarca(idMrc: number): Observable<Success> {
+      return this.http.get<Success>(`${this.urlBase}/marca/${idMrc}`);
+    }
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Producto } from '../../../models/producto';
 import { ProductoService } from '../../../service/producto.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';

@@ -1,6 +1,22 @@
 <div class="container">
     <h2>{{titulo}}</h2>
     <div *ngIf="cargoLista">
+
+      <div class="mb-3 row">
+        <label for="idMdl" class="col-form-label col-sm-2">Filtrar por Marca:</label>
+        <div class="col-sm-6">
+          <select class="form-control" [(ngModel)]="idMdlFiltro" id="idMdl">
+            <option value="0" disabled>Selecciona una marca</option>
+            <option *ngFor="let marca of marcas" [value]="marca.id">{{ marca.nombre }}</option>
+          </select>
+        </div>
+        
+        <div class="col-sm-4 d-flex">
+          <button class="btn btn-primary me-2" (click)="filtrarPorMarca()">Filtrar</button>
+          <button class="btn btn-secondary" (click)="mostrarTodosLasMarcas()" [disabled]="!filtroAplicado">Volver a lista de modelos</button>
+        </div>
+      </div> 
+
       <table class="table">
         <thead>
           <tr>
@@ -26,6 +42,7 @@
             <td>{{modelo.persona.nombre}}</td>
             <td>{{modelo.material.nombre}}</td>
             <td><a href="" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
+            <td><button class="btn btn-outline-danger" (click)="eliminarModelo(modelo.id)"><i class="fa-solid fa-trash"></i> Eliminar</button></td>
           </tr>
         </tbody>
       </table>
