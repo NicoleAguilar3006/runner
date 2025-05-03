@@ -6,8 +6,13 @@ import { ListarModelosComponent } from './componentes/modelo/listar-modelos/list
 import { ListarCategoriasComponent } from './componentes/categorias/listar-categorias/listar-categorias.component';
 import { RegistrarProductosComponent } from './componentes/productos/registrar-productos/registrar-productos.component';
 import { ActualizarProductosComponent } from './componentes/productos/actualizar-productos/actualizar-productos.component';
+
 import { RegistrarModelosComponent } from './componentes/modelo/registrar-modelo/registrar-modelo.component'; 
 import { ActualizarModeloComponent } from './componentes/modelo/actualizar-modelo/actualizar-modelo.component';
+
+import { ListarMarcasComponent } from './componentes/marcas/listar-marcas/listar-marcas.component';
+import { RegistrarCategoriasComponent } from './componentes/categorias/registrar-categorias/registrar-categorias.component';
+import { RegistrarMarcaComponent } from './componentes/marcas/registrar-marca/registrar-marca.component';
 
 
 export const routes: Routes = [
@@ -15,7 +20,12 @@ export const routes: Routes = [
     { path: 'listadoProductos', component: ListarProductosComponent}, 
     { path: 'listadoModelos', component: ListarModelosComponent}, 
     { path: 'listadoCategorias', component: ListarCategoriasComponent}, 
+    { path: 'listadoMarcas', component: ListarMarcasComponent}, 
+
     { path: 'registroProductos', component: RegistrarProductosComponent}, 
+    { path: 'registroCategorias', component: RegistrarCategoriasComponent},
+    { path: 'registroMarcas', component: RegistrarMarcaComponent},
+
     { path: 'actualizar/:id', component: ActualizarProductosComponent },
     { path: 'registrarModelos', component: RegistrarModelosComponent }, 
     { path: 'actualizarModelo/:id', component: ActualizarModeloComponent }, 

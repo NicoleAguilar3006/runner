@@ -31,5 +31,9 @@ export class ProductoService {
   
   public eliminar(id: string): Observable<Success> {
     return this.http.delete<Success>(this.urlBase + `/${id}`);
-    }    
+  }  
+    
+    public listarPorIdModelo(idMdl: number): Observable<Success> {
+      return this.http.get<Success>(`${this.urlBase}/modelo/${idMdl}`);
+    }
 }

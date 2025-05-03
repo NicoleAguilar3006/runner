@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Categoria } from '../../../models/categoria';
 import { CategoriaService } from '../../../service/categoria.service';
 import { Success } from '../../../models/success';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listar-categorias',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './listar-categorias.component.html',
   styleUrl: './listar-categorias.component.css'
 })
