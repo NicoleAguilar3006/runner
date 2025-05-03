@@ -1,19 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ProductoRegistrar } from '../models/producto-registrar';
+import { Success } from '../models/success';
 import { Producto } from '../models/producto';
-import { ProductoResponse } from '../models/producto-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
-  private urlBase = 'http://localhost:8080/api/producto/listado';
+  private urlBase = 'http://localhost:8080/api/producto';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  listarProductos(): Observable<ProductoResponse> {
-    return this.http.get<ProductoResponse>(this.urlBase);
-    }
+  listarProductos(): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + "/listado");
+  }
+
+  public registrar(producto: ProductoRegistrar): Observable<Success> {
+    return this.http.post<Success>(this.urlBase, producto);
+  }
+
+  public buscar(id: string): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + `/${id}`);
+  }
+
+  public actualizar(id: string, producto: ProductoRegistrar): Observable<Success> {
+    return this.http.put<Success>(this.urlBase + `/${id}`, producto);
+  }
+  
+  public eliminar(id: string): Observable<Success> {
+    return this.http.delete<Success>(this.urlBase + `/${id}`);
+  }  
     
+    public listarPorIdModelo(idMdl: number): Observable<Success> {
+      return this.http.get<Success>(`${this.urlBase}/modelo/${idMdl}`);
+    }
 }

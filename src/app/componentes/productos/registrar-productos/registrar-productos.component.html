@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Registrar Producto</h2>
+  
+    <div *ngIf="mensajeConfirmacion" class="alert alert-success">
+      {{ mensajeConfirmacion }}
+    </div>
+
+    <form (ngSubmit)="registrarProducto()">
+      <div class="mb-3">
+        <label for="stock" class="form-label">Stock</label>
+        <input type="number" id="stock" class="form-control" [(ngModel)]="nuevoProducto.stock" name="stock" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="color" class="form-label">Color</label>
+        <select id="color" class="form-select" [(ngModel)]="nuevoProducto.idClr" name="idClr" required>
+          <option selected value="0" disabled>Seleccione...</option>
+          <option *ngFor="let color of colores" [value]="color.id">{{ color.nombre }}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="talla" class="form-label">Talla</label>
+        <select id="talla" class="form-select" [(ngModel)]="nuevoProducto.idTll" name="idTll" required>
+          <option selected value="0" disabled>Seleccione...</option>
+          <option *ngFor="let talla of tallas" [value]="talla.id">{{ talla.nombre }}</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <select id="modelo" class="form-select" [(ngModel)]="nuevoProducto.idMdl" name="idMdl" required>
+          <option selected value="0" disabled>Seleccione...</option>
+          <option *ngFor="let modelo of modelos" [value]="modelo.id">{{ modelo.descripcion }}</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Registrar</button>
+      <a href="/listadoProductos"class="btn btn-success">Volver</a>
+    </form>
+  </div>
+  
