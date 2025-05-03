@@ -1,0 +1,75 @@
+<header>
+  <div class="header-head">
+    LOGO
+  </div>
+  <div class="header-body in-grid">
+    <ul class="header-component in-flex">
+      <li class="header-item">
+        <div class="header-menu">
+          <div class="header-btn_menu in-flex">
+            <label for="checkbox-menu_bar" class="lbl-header">
+              <svg>
+                <use href="./icons/icon.svg#menu-bar"></use>
+              </svg>
+            </label>
+          </div>
+
+        </div>
+      </li>
+      <li class="header-item">
+        <div class="header-logo">
+          <a routerLink="/" class="header-btn_logo in-flex">
+            Logo
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="header-component in-flex">
+      <li class="header-item">
+        <div class="header-car">
+          <div class="header-btn_car in-flex">
+            <label for="checkbox-car" class="lbl-header">
+              <svg>
+                <use href="./icons/icon.svg#car-icon"></use>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </li>
+
+      <li class="header-item">
+        <div class="header-user">
+          <a routerLink="/sign-in" class="header-btn_user in-flex" *ngIf="!isLoggedIn()">
+            <svg>
+              <use href="./icons/icon.svg#user-icon"></use>
+            </svg>
+            <span>Iniciar secion</span>
+          </a>
+
+          <a class="header-btn_user in-flex" *ngIf="isLoggedIn()" (click)="logout()">
+            <svg>
+              <use href="./icons/icon.svg#user-icon"></use>
+            </svg>
+            <span>Cerrar sesión</span>
+          </a>
+        </div>
+      </li>
+      <li class="header-item">
+        <div class="header-user">
+          <a routerLink="/sign-up" class="header-btn_user in-flex" *ngIf="!isLoggedIn()">
+            <svg>
+              <use href="./icons/icon.svg#user-icon"></use>
+            </svg>
+            <span>Crear usuario</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+  <input type="checkbox" class="none" id="checkbox-car" />
+  <input type="checkbox" class="none" id="checkbox-menu_bar" />
+
+</header>

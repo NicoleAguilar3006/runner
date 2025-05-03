@@ -1,1 +1,60 @@
-<p>signup works!</p>
+<div class="in-flex" id="cont-login">
+    <div class="cont-form">
+        <div class="form-head">
+            <h2>Crear cuenta</h2>
+        </div>
+        <div class="form-body">
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <div class="sp-form in-grid">
+                    <div class="item in-flex">
+                        <input type="text" required="required" autocomplete="off" formControlName="nombre" id="nombre"/>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="item in-flex">
+                        <input type="text" required="required" autocomplete="off" formControlName="apellido"/>
+                        <label for="">Apellido</label>
+                    </div>
+                    <div class="item in-flex">
+                        <input type="text" required="required" autocomplete="off" formControlName="nmrDocumento"/>
+                        <label for="">Numero de documento</label>
+                    </div>
+                    <div class="item in-flex">
+                        <input type="text" required="required" autocomplete="off" formControlName="telefono"/>
+                        <label for="">Telefono</label>
+                    </div>
+                    <div class="item in-flex">
+                        <input type="text" required="required" autocomplete="off" formControlName="correo" />
+                        <label for="">Correo</label>
+                    </div>
+                    <div class="item in-flex">
+                        <input type="password" required="required" autocomplete="off" formControlName="contrasenia"/>
+                        <label for="">Contraseña</label>
+                    </div>
+                    <div class="item in-flex">
+                        <select id="distrito" class="form-select" formControlName="idDto" required>
+                          <option *ngFor="let distrito of distritos" [value]="distrito.idDto">{{ distrito.nombre }}</option>
+                        </select>
+                        <label for="">Distrito</label>
+                    </div>
+                    <div class="item-check in-flex">
+                        <input type="checkbox" required="required" autocomplete="off" id="sp-notf" />
+                        <label for="sp-notf">¿Deseas recibir ofertas y novedades personalizadas?</label>
+                    </div>
+                    <div class="item-check in-flex">
+                        <input type="checkbox" required="required" autocomplete="off" id="sp-term" />
+                        <label for="sp-term">Acepto los <a href="">términos y condiciones</a> y nuestra <a
+                                href="">política de privacidad de datos.</a></label>
+                    </div>
+                </div>
+
+                <div class="cont-submit">
+                    <input id="inp-login" type="submit" value="Registrar" />
+                </div>
+            </form>
+        </div>
+
+        <div class="form-footer">
+            <label for="check-cir">¿Ya estas registrado? <span>Iniciar sesión</span></label>
+        </div>
+    </div>
+</div>

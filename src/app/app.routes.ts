@@ -6,12 +6,17 @@ import { roleGuard } from './guards/role.guard';
 import { AdminComponent } from './componentes/admin/admin.component';
 import { UserComponent } from './componentes/user/user.component';
 import { authGuard } from './guards/auth.guard';
+import { SignupComponent } from './componentes/account/signup/signup.component';
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent },
     { path: 'listado', component: ListarProductosComponent },
     { path: 'sign-in', 
         component: SigninComponent ,
+        canActivate: [authGuard]
+    },
+    { path: 'sign-up', 
+        component: SignupComponent ,
         canActivate: [authGuard]
     },
     {

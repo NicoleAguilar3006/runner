@@ -2,15 +2,18 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  const router = inject(Router);
+
+  if (typeof window === 'undefined') { // colocar esto cada vez que use un local store
+    console.log("Hola me usaste")
+    return false;
+  }
+
   const token = localStorage.getItem('token');
 
   if (token) {
-    // Redirige al usuario a la página principal (o cualquier otra ruta que quieras)
-    router.navigate(['/']); 
+    return false;
+  }else{
     return true;
   }
 
-  router.navigate(['/sign-in']); // redirige si no está logeado
-  return false;
 };

@@ -13,29 +13,31 @@ export class AccountService {
 
   constructor(
     private http: HttpClient
-  ) {}
+  ) { }
 
-  public signin(signin : Signin): Observable<Success> {
+  public signin(signin: Signin): Observable<Success> {
     return this.http.post<Success>(this.urlBase + "/sign-in", signin);
   }
 
-  public signup(signup : Signup): Observable<Success> {
+  public signup(signup: Signup): Observable<Success> {
     return this.http.post<Success>(this.urlBase + "/register", signup);
   }
 
   public saveUserData(token: string) {
-    // Guardamos el token en localStorage
-    localStorage.setItem('token', token);
 
-    // Decodificamos el JWT
-    const decoded = this.decodeJWT(token);
-     if (decoded) {
-       localStorage.setItem('user', JSON.stringify({
-         nombre: decoded.name,
-         correo: decoded.sub,
-         rol: decoded.role,
-       }));
-     }
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('token', token);
+
+      // Decodificamos el JWT
+      const decoded = this.decodeJWT(token);
+      if (decoded) {
+        localStorage.setItem('user', JSON.stringify({
+          nombre: decoded.name,
+          correo: decoded.sub,
+          rol: decoded.role,
+        }));
+      }
+    }
   }
 
   private decodeJWT(token: string): any {
@@ -49,16 +51,24 @@ export class AccountService {
   }
 
   public getUserData() {
-    return JSON.parse(localStorage.getItem('user')!);
+    if (typeof window !== 'undefined') {
+      return JSON.parse(localStorage.getItem('user')!)
+    }
   }
 
   public isLoggedIn(): boolean {
-    return localStorage.getItem('token') !== null;
+    if (typeof window === 'undefined') {
+      return false;
+    }
+    return !!localStorage.getItem('token');
   }
 
   public logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    if (typeof window !== 'undefined') {
+      console.log(localStorage.getItem('token'))
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+    }
   }
-    
+
 }

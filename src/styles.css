@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+body{
+    fill:rgb(0, 0, 0);
+    color:rgb(38, 38, 38);
+    background-color: rgb(255, 249, 235);
+}
+
+.container{
+    width: 85%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+
+select {
+    outline: none;
+}
+
+button {
+    border: none;
+    /* font-size: 2em; */
+}
+
+a{
+    text-decoration: none;
+    color:rgb(38, 38, 38);
+}
+
+.in-flex {
+    display: flex;
+}
+
+.in-grid {
+    display: grid;
+}
+
+.in-inline_block {
+    display: inline-block;
+}
+
+.none {
+    display: none;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+img{
+    
+    object-fit: cover;
+}
+
+/*
+body::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 40px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(72, 72, 72, 0.5);
+}
+*/
+
+.sub-title{
+    margin: 100px 0px 10px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.sub-title h2{
+    font-size: 3em;
+    font-weight: 400;
+    color: rgb(107, 107, 107);
+    text-shadow: -4px 3px 4px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+
+
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 450px) {
+
+    *{
+        font-size: 12px;
+    }
+
+}
