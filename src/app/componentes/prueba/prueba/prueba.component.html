@@ -1,0 +1,28 @@
+<form (ngSubmit)="submitForm()">
+    <div>
+      <h2>Selecciona los colores</h2>
+      <div *ngFor="let color of colors">
+        <input
+          type="checkbox"
+          [value]="color"
+          (change)="onColorChange(color, $event)"
+        />
+        {{ color }}
+      </div>
+    </div>
+  
+    <div>
+        <h2>Selecciona las tallas</h2>
+        <div *ngFor="let size of sizes; let i = index">
+          <input
+            type="checkbox"
+            [value]="size"
+            (change)="onSizeChange(size, $event)"
+          />
+          {{ size }}
+        </div>
+      </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+  

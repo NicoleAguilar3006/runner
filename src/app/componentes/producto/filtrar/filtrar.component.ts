@@ -26,14 +26,83 @@ export class FiltrarComponent {
   
   signupForm: FormGroup;
 
+  selectedColores: number[] = [];
+  selectedTallas: number[] = [];
+  selectedCategorias: number[] = [];
+  selectedMarcas: number[] = [];
+  selectedPersonas: number[] = [];
+  selectedMateriales: number[] = [];
+
   filtroProducto: FiltroProducto = {
-    idClr: 0,
-    idTll: 0,
-    idCtg: 0,
-    idMrc: 0,
-    idPrn: 0,
-    idMtl: 0
+    idClr: [],
+    idTll: [],
+    idCtg: [],
+    idMrc: [],
+    idPrn: [],
+    idMtl: []
   }
+
+  onColorChange(color: number, event: any) {
+    if (event.target.checked) {
+      this.selectedColores.push(color);
+    } else {
+      const index = this.selectedColores.indexOf(color);
+      if (index > -1) {
+        this.selectedColores.splice(index, 1);
+      }
+    }
+  }
+  onTallaChange(talla: number, event: any) {
+    if (event.target.checked) {
+      this.selectedTallas.push(talla);
+    } else {
+      const index = this.selectedTallas.indexOf(talla);
+      if (index > -1) {
+        this.selectedTallas.splice(index, 1);
+      }
+    }
+  }
+  onCategoriaChange(categoria: number, event: any) {
+    if (event.target.checked) {
+      this.selectedCategorias.push(categoria);
+    } else {
+      const index = this.selectedCategorias.indexOf(categoria);
+      if (index > -1) {
+        this.selectedCategorias.splice(index, 1);
+      }
+    }
+  }
+  onMarcaChange(marca: number, event: any) {
+    if (event.target.checked) {
+      this.selectedMarcas.push(marca);
+    } else {
+      const index = this.selectedMarcas.indexOf(marca);
+      if (index > -1) {
+        this.selectedMarcas.splice(index, 1);
+      }
+    }
+  }
+  onPersonaChange(persona: number, event: any) {
+    if (event.target.checked) {
+      this.selectedPersonas.push(persona);
+    } else {
+      const index = this.selectedPersonas.indexOf(persona);
+      if (index > -1) {
+        this.selectedPersonas.splice(index, 1);
+      }
+    }
+  }
+  onMaterialChange(material: number, event: any) {
+    if (event.target.checked) {
+      this.selectedMateriales.push(material);
+    } else {
+      const index = this.selectedMateriales.indexOf(material);
+      if (index > -1) {
+        this.selectedMateriales.splice(index, 1);
+      }
+    }
+  }
+
   success: Success = {
     timestamp: new Date(),
     status: 0,
@@ -133,38 +202,24 @@ export class FiltrarComponent {
     )
   }
 
-
-  findByAttributes(): void {
-    this.productoService.findByAttributes(this.filtroProducto).subscribe(
-      data => {
-        this.listTallas = data;
-      }
-    )
-  }
-
    onSubmit() {
-      if (this.signupForm.invalid) return;
-  
+      // if (this.signupForm.invalid) return;
       const data: FiltroProducto = {
-        idClr: this.signupForm.value.idClr,
-        idTll: this.signupForm.value.idTll,
-        idCtg: this.signupForm.value.idCtg,
-        idMrc: this.signupForm.value.idMrc,
-        idPrn: this.signupForm.value.idPrn,
-        idMtl: this.signupForm.value.idMtl
-      }
-  
+        idClr: this.selectedColores,
+        idTll: this.selectedCategorias,
+        idCtg: this.selectedMarcas,
+        idMrc: this.selectedMateriales,
+        idPrn: this.selectedPersonas,
+        idMtl: this.selectedTallas
+      };
       
-      //const data: FiltroProducto = this.signupForm.value;
-  
-      console.log(data)
       this.productoService.findByAttributes(data).subscribe(
-        (res) => {
-          console.log(res.response)
-          this.listProducto = res;
+        (response) => {
+          console.log(response);
+          this.listProducto = response;
         },
-        (err) => {
-          console.log(err.error.message)
+        (e) => {
+          console.error( e.error.message);
         }
       );
     }

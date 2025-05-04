@@ -17,7 +17,7 @@
                 <ul class="ul-filter">
                   <li *ngFor="let color of listColores.response">
                     <span>
-                      <input type="radio" [formControlName]="'idClr'" [value]="color.id" id="color-{{color.id}}">
+                      <input type="checkbox" [formControlName]="'idClr'" [value]="color.id" id="color-{{color.id}}" (change)="onColorChange(color.id, $event)">
                       <label for="color-{{color.id}}">
                         <span>{{ color.nombre }}</span>
                       </label>
@@ -34,7 +34,7 @@
                 <ul class="ul-filter">
                   <li *ngFor="let talla of listTallas.response">
                     <span>
-                      <input type="radio" [formControlName]="'idTll'" [value]="talla.id" id="talla-{{talla.id}}">
+                      <input type="checkbox" [formControlName]="'idTll'" [value]="talla.id" id="talla-{{talla.id}}" (change)="onTallaChange(talla.id, $event)">
                       <label for="talla-{{talla.id}}">
                         <span>{{ talla.nombre }}</span>
                       </label>
@@ -51,7 +51,7 @@
                 <ul class="ul-filter">
                   <li *ngFor="let categoria of listCategorias.response">
                     <span>
-                      <input type="radio" [formControlName]="'idCtg'" [value]="categoria.id" id="categoria-{{categoria.id}}">
+                      <input type="checkbox" [formControlName]="'idCtg'" [value]="categoria.id" id="categoria-{{categoria.id}}" (change)="onCategoriaChange(categoria.id, $event)">
                       <label for="categoria-{{categoria.id}}">
                         <span>{{ categoria.nombre }}</span>
                       </label>
@@ -68,7 +68,7 @@
                 <ul class="ul-filter">
                   <li *ngFor="let marca of listMarcas.response">
                     <span>
-                      <input type="radio" [formControlName]="'idMrc'" [value]="marca.id" id="marca-{{marca.id}}">
+                      <input type="checkbox" [formControlName]="'idMrc'" [value]="marca.id" id="marca-{{marca.id}}" (change)="onMarcaChange(marca.id, $event)">
                       <label for="marca-{{marca.id}}">
                         <span>{{ marca.nombre }}</span>
                       </label>
@@ -85,7 +85,7 @@
                 <ul class="ul-filter">
                   <li *ngFor="let persona of listPersonas.response">
                     <span>
-                      <input type="radio" [formControlName]="'idPrn'" [value]="persona.id" id="persona-{{persona.id}}">
+                      <input type="checkbox" [formControlName]="'idPrn'" [value]="persona.id" id="persona-{{persona.id}}" (change)="onPersonaChange(persona.id, $event)">
                       <label for="persona-{{persona.id}}">
                         <span>{{ persona.nombre }}</span>
                       </label>
@@ -102,7 +102,7 @@
                 <ul class="ul-filter">
                   <li *ngFor="let material of listMateriales.response">
                     <span>
-                      <input type="radio" [formControlName]="'idMtl'" [value]="material.id" id="material-{{material.id}}">
+                      <input type="checkbox" [formControlName]="'idMtl'" [value]="material.id" id="material-{{material.id}}" (change)="onMaterialChange(material.id, $event)">
                       <label for="material-{{material.id}}">
                         <span>{{ material.nombre }}</span>
                       </label>
@@ -131,8 +131,8 @@
                         <h3>{{producto.modelo.descripcion}}</h3>
                     </div>
                     <ul class="in-grid">
-                        <li><span></span></li>
-                        <li><span>S/</span></li>
+                        <li><span>{{producto.modelo.marca.nombre}}</span></li>
+                        <li><span>S/ {{producto.modelo.precio}}</span></li>
                         <li><button>Agregar</button></li>
                     </ul>
                 </div>

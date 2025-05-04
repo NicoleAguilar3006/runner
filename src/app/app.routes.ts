@@ -10,10 +10,12 @@ import { authGuard } from './guards/auth.guard';
 import { SignupComponent } from './componentes/account/signup/signup.component';
 import { PasswordComponent } from './componentes/account/password/password.component';
 import { FiltrarComponent } from './componentes/producto/filtrar/filtrar.component';
+import { PruebaComponent } from './componentes/prueba/prueba/prueba.component';
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent },
     { path: 'filtros', component: FiltrarComponent},
+    { path: 'prueba', component: PruebaComponent},
     { path: 'sign-in', 
         component: SigninComponent ,
         canActivate: [authGuard]
