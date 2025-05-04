@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { ProductoService } from '../../../service/producto.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ProductoRegistrar } from '../../../models/producto-registrar';
-import { ColorService } from '../../../service/color.service';
-import { Color } from '../../../models/color';
 import { CommonModule } from '@angular/common';
-import { TallaService } from '../../../service/talla.service';
-import { Talla } from '../../../models/talla';
-import { ModeloService } from '../../../service/modelo.service';
-import { Modelo } from '../../../models/modelo';
+import { Color } from '../../../models/color/color';
+import { Talla } from '../../../models/talla/talla';
+import { Modelo } from '../../../models/modelo/modelo';
+import { ProductoService } from '../../../service/producto/producto.service';
+import { ColorService } from '../../../service/color/color.service';
+import { TallaService } from '../../../service/talla/talla.service';
+import { ModeloService } from '../../../service/modelo/modelo.service';
 
 
 @Component({
@@ -47,7 +47,7 @@ export class RegistrarProductosComponent {
   }
 
   cargarColores(): void {
-    this.colorService.listarColores().subscribe(
+    this.colorService.findAllColores().subscribe(
       (response) => {
         this.colores = response.response;
         console.log(this.colores); 
@@ -59,7 +59,7 @@ export class RegistrarProductosComponent {
   }
 
   cargarTallas(): void {
-    this.tallaService.listarTallas().subscribe(
+    this.tallaService.findAllTallas().subscribe(
       (response) => {
         this.tallas = response.response;
         console.log(this.tallas); 
@@ -71,7 +71,7 @@ export class RegistrarProductosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.listarModelos().subscribe(
+    this.modeloService.findAllModelos().subscribe(
       (response) => {
         this.modelos = response.response;
         console.log(this.modelos); 

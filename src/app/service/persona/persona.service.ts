@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Persona } from '../models/persona';  
-import { Success } from '../models/success';
+import { Success } from '../../models/success/success';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class PersonaService {
 
   constructor(private http: HttpClient) {}
 
-  listarPersonas(): Observable<Success> {
+  findAllPersonas(): Observable<Success> {
     return this.http.get<Success>(this.urlBase );  
   }
 }

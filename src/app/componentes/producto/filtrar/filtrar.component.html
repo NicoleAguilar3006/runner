@@ -1,0 +1,149 @@
+<div class="container">
+  <div class='pgfilter in-grid'>
+      <div class='hola'></div>
+      <div id="div-filter">
+        <div class="filt-head">
+          <h2>
+            Filtros
+          </h2>
+        </div>
+        <aside class="filt-body">
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <section class="item-filter">
+              <h5>
+                Color
+              </h5>
+              <div class="body-filters active">
+                <ul class="ul-filter">
+                  <li *ngFor="let color of listColores.response">
+                    <span>
+                      <input type="radio" [formControlName]="'idClr'" [value]="color.id" id="color-{{color.id}}">
+                      <label for="color-{{color.id}}">
+                        <span>{{ color.nombre }}</span>
+                      </label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="item-filter">
+              <h5>
+                Talla
+              </h5>
+              <div class="body-filters active">
+                <ul class="ul-filter">
+                  <li *ngFor="let talla of listTallas.response">
+                    <span>
+                      <input type="radio" [formControlName]="'idTll'" [value]="talla.id" id="talla-{{talla.id}}">
+                      <label for="talla-{{talla.id}}">
+                        <span>{{ talla.nombre }}</span>
+                      </label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="item-filter">
+              <h5>
+                Categoría
+              </h5>
+              <div class="body-filters active">
+                <ul class="ul-filter">
+                  <li *ngFor="let categoria of listCategorias.response">
+                    <span>
+                      <input type="radio" [formControlName]="'idCtg'" [value]="categoria.id" id="categoria-{{categoria.id}}">
+                      <label for="categoria-{{categoria.id}}">
+                        <span>{{ categoria.nombre }}</span>
+                      </label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="item-filter">
+              <h5>
+                Marca
+              </h5>
+              <div class="body-filters active">
+                <ul class="ul-filter">
+                  <li *ngFor="let marca of listMarcas.response">
+                    <span>
+                      <input type="radio" [formControlName]="'idMrc'" [value]="marca.id" id="marca-{{marca.id}}">
+                      <label for="marca-{{marca.id}}">
+                        <span>{{ marca.nombre }}</span>
+                      </label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="item-filter">
+              <h5>
+                Persona
+              </h5>
+              <div class="body-filters active">
+                <ul class="ul-filter">
+                  <li *ngFor="let persona of listPersonas.response">
+                    <span>
+                      <input type="radio" [formControlName]="'idPrn'" [value]="persona.id" id="persona-{{persona.id}}">
+                      <label for="persona-{{persona.id}}">
+                        <span>{{ persona.nombre }}</span>
+                      </label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="item-filter">
+              <h5>
+                Material
+              </h5>
+              <div class="body-filters active">
+                <ul class="ul-filter">
+                  <li *ngFor="let material of listMateriales.response">
+                    <span>
+                      <input type="radio" [formControlName]="'idMtl'" [value]="material.id" id="material-{{material.id}}">
+                      <label for="material-{{material.id}}">
+                        <span>{{ material.nombre }}</span>
+                      </label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+      
+            <div class="filt-footer">
+              <button type="submit">Filtrar</button>
+            </div>
+          </form>
+        </aside>
+      </div>
+      
+      <div class='papa'>
+          <ul id="ul-prod" class="in-flex">
+            <li *ngFor="let producto of listProducto.response">
+              <div class="item-prod">
+                <div class="cont-img">
+                    <img src="" alt="" />
+                </div>
+                <div class="cont-info">
+                    <div class="prod-title">
+                        <h3>{{producto.modelo.descripcion}}</h3>
+                    </div>
+                    <ul class="in-grid">
+                        <li><span></span></li>
+                        <li><span>S/</span></li>
+                        <li><button>Agregar</button></li>
+                    </ul>
+                </div>
+            </div>
+            </li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+
+<ul>
+
+</ul>

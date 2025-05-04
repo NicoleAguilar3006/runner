@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ModeloService } from '../../../service/modelo.service';
 import { Router } from '@angular/router';
 import { ModeloRegistrar } from '../../../models/modelo-registrar';
-import { CategoriaService } from '../../../service/categoria.service';
-import { MarcaService } from '../../../service/marca.service';
-import { PersonaService } from '../../../service/persona.service';
-import { MaterialService } from '../../../service/material.service';
-import { Categoria } from '../../../models/categoria';
-import { Marca } from '../../../models/marca';
-import { Persona } from '../../../models/persona';
-import { Material } from '../../../models/material';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Categoria } from '../../../models/categoria/categoria';
+import { Marca } from '../../../models/marca/marca';
+import { Persona } from '../../../models/persona/persona';
+import { Material } from '../../../models/material/material';
+import { ModeloService } from '../../../service/modelo/modelo.service';
+import { CategoriaService } from '../../../service/categoria/categoria.service';
+import { MarcaService } from '../../../service/marca/marca.service';
+import { PersonaService } from '../../../service/persona/persona.service';
+import { MaterialService } from '../../../service/material/material.service';
 
 @Component({
   selector: 'app-registrar-modelos',
@@ -52,10 +52,10 @@ export class RegistrarModelosComponent implements OnInit {
   }
 
   cargarDatos(): void {
-    this.categoriaService.listarCategorias().subscribe(res => this.categorias = res.response);
-    this.marcaService.listarMarcas().subscribe(res => this.marcas = res.response);
-    this.personaService.listarPersonas().subscribe(res => this.personas = res.response);
-    this.materialService.listarMateriales().subscribe(res => this.materiales = res.response);
+    this.categoriaService.findAllCategorias().subscribe(res => this.categorias = res.response);
+    this.marcaService.findAllMarcas().subscribe(res => this.marcas = res.response);
+    this.personaService.findAllPersonas().subscribe(res => this.personas = res.response);
+    this.materialService.findAllMateriales().subscribe(res => this.materiales = res.response);
   }
 
   registrarModelo(): void {

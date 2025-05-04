@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Categoria } from '../../../models/categoria';
-import { CategoriaService } from '../../../service/categoria.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Categoria } from '../../../models/categoria/categoria';
+import { CategoriaService } from '../../../service/categoria/categoria.service';
 
 
 @Component({

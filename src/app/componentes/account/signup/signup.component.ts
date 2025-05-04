@@ -41,7 +41,7 @@ export class SignupComponent {
   }
 
   cargarDistrito(): void {
-    this.distritoService.listDistrito().subscribe(
+    this.distritoService.findAllDistrito().subscribe(
       (response) => {
         this.distritos = response.response;
       },
@@ -52,14 +52,6 @@ export class SignupComponent {
   }
 
   onSubmit() {
-    
-  console.log(this.signupForm.value.nombre)
-  console.log(this.signupForm.value.apellido)
-  console.log(this.signupForm.value.nmrDocumento)
-  console.log(this.signupForm.value.telefono)
-  console.log(this.signupForm.value.correo)
-  console.log(this.signupForm.value.contrasenia)
-  console.log(this.signupForm.value.idDto)
     if (this.signupForm.invalid) return;
 
     const datos: Signup = {

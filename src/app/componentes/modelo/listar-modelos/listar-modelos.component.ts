@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ModeloService } from '../../../service/modelo.service';
-import { Success } from '../../../models/success';
-import { Marca } from '../../../models/marca';
-import { MarcaService } from '../../../service/marca.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Success } from '../../../models/success/success';
+import { Marca } from '../../../models/marca/marca';
+import { ModeloService } from '../../../service/modelo/modelo.service';
+import { MarcaService } from '../../../service/marca/marca.service';
 
 @Component({
   selector: 'app-listar-modelos',
@@ -43,7 +43,7 @@ export class ListarModelosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.listarModelos().subscribe(
+    this.modeloService.findAllModelos().subscribe(
       data => {
         this.modelos = data;
         this.titulo = 'Listado de modelos';
@@ -58,7 +58,7 @@ export class ListarModelosComponent {
   }
 
   cargarMarcas(): void {
-    this.marcaService.listarMarcas().subscribe(
+    this.marcaService.findAllMarcas().subscribe(
       (response) => {
         this.marcas = response.response;
         console.log(this.marcas);

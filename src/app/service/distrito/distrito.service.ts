@@ -13,7 +13,7 @@ export class DistritoService {
     private http: HttpClient
   ) { }
 
-  public listDistrito(): Observable<Success> {
+  public findAllDistrito(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
 

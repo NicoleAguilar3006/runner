@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ProductoService } from '../../../service/producto.service';
-import { Success } from '../../../models/success';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ModeloService } from '../../../service/modelo.service';
-import { Modelo } from '../../../models/modelo';
+import { ProductoService } from '../../../service/producto/producto.service';
+import { ModeloService } from '../../../service/modelo/modelo.service';
+import { Modelo } from '../../../models/modelo/modelo';
+import { Success } from '../../../models/success/success';
 
 @Component({
   selector: 'app-listar-productos',
@@ -47,7 +47,7 @@ export class ListarProductosComponent {
 
   cargarProductos(): void {
 
-    this.productoService.listarProductos().subscribe(
+    this.productoService.findAllProductos().subscribe(
       data => {
         this.productos = data;
         this.titulo = 'Listado de productos';
@@ -64,7 +64,7 @@ export class ListarProductosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.listarModelos().subscribe(
+    this.modeloService.findAllModelos().subscribe(
       (response) => {
         this.modelos = response.response;
         console.log(this.modelos); 

@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductoRegistrar } from '../../../models/producto-registrar';
-import { Color } from '../../../models/color';
-import { Talla } from '../../../models/talla';
-import { Modelo } from '../../../models/modelo';
-import { ProductoService } from '../../../service/producto.service';
-import { ColorService } from '../../../service/color.service';
-import { TallaService } from '../../../service/talla.service';
-import { ModeloService } from '../../../service/modelo.service';
 import { ActivatedRoute } from '@angular/router';
+import { Color } from '../../../models/color/color';
+import { Talla } from '../../../models/talla/talla';
+import { Modelo } from '../../../models/modelo/modelo';
+import { ProductoService } from '../../../service/producto/producto.service';
+import { ColorService } from '../../../service/color/color.service';
+import { TallaService } from '../../../service/talla/talla.service';
+import { ModeloService } from '../../../service/modelo/modelo.service';
 
 @Component({
   selector: 'app-actualizar-productos',
@@ -65,7 +65,7 @@ export class ActualizarProductosComponent {
   }
 
   cargarColores(): void {
-    this.colorService.listarColores().subscribe(
+    this.colorService.findAllColores().subscribe(
       (response) => {
         this.colores = response.response;
       },
@@ -76,7 +76,7 @@ export class ActualizarProductosComponent {
   }
 
   cargarTallas(): void {
-    this.tallaService.listarTallas().subscribe(
+    this.tallaService.findAllTallas().subscribe(
       (response) => {
         this.tallas = response.response;
       },
@@ -87,7 +87,7 @@ export class ActualizarProductosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.listarModelos().subscribe(
+    this.modeloService.findAllModelos().subscribe(
       (response) => {
         this.modelos = response.response;
       },

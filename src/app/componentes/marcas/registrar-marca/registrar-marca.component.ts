@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Marca } from '../../../models/marca';
-import { MarcaService } from '../../../service/marca.service';
 import { Router } from '@angular/router';
+import { Marca } from '../../../models/marca/marca';
+import { MarcaService } from '../../../service/marca/marca.service';
 
 @Component({
   selector: 'app-registrar-marca',

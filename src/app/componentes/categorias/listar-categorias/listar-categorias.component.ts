@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Categoria } from '../../../models/categoria';
-import { CategoriaService } from '../../../service/categoria.service';
-import { Success } from '../../../models/success';
 import { RouterLink } from '@angular/router';
+import { Success } from '../../../models/success/success';
+import { CategoriaService } from '../../../service/categoria/categoria.service';
 
 @Component({
   selector: 'app-listar-categorias',
@@ -24,7 +23,7 @@ export class ListarCategoriasComponent {
     constructor(private categoriaService: CategoriaService) { }
 
     ngOnInit() : void {
-      this.categoriaService.listarCategorias().subscribe(
+      this.categoriaService.findAllCategorias().subscribe(
         data => {
           this.categorias = data;
           this.titulo = 'Listado de categorias';

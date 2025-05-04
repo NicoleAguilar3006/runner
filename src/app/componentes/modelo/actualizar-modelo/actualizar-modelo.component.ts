@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModeloRegistrar } from '../../../models/modelo-registrar';
-import { CategoriaService } from '../../../service/categoria.service';
-import { MarcaService } from '../../../service/marca.service';
-import { PersonaService } from '../../../service/persona.service';
-import { MaterialService } from '../../../service/material.service';
-import { ModeloService } from '../../../service/modelo.service';
-import { Categoria } from '../../../models/categoria';
-import { Marca } from '../../../models/marca';
-import { Persona } from '../../../models/persona';
-import { Material } from '../../../models/material';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Console } from 'console';
+import { Categoria } from '../../../models/categoria/categoria';
+import { Marca } from '../../../models/marca/marca';
+import { Persona } from '../../../models/persona/persona';
+import { Material } from '../../../models/material/material';
+import { ModeloService } from '../../../service/modelo/modelo.service';
+import { CategoriaService } from '../../../service/categoria/categoria.service';
+import { MarcaService } from '../../../service/marca/marca.service';
+import { PersonaService } from '../../../service/persona/persona.service';
+import { MaterialService } from '../../../service/material/material.service';
 
 @Component({
   selector: 'app-actualizar-modelo',
@@ -76,7 +76,7 @@ export class ActualizarModeloComponent {
 
   
   cargarCategorias(): void {
-    this.categoriaService.listarCategorias().subscribe(
+    this.categoriaService.findAllCategorias().subscribe(
       (response) => {
         this.categorias = response.response;
       },
@@ -88,7 +88,7 @@ export class ActualizarModeloComponent {
 
   
   cargarMarcas(): void {
-    this.marcaService.listarMarcas().subscribe(
+    this.marcaService.findAllMarcas().subscribe(
       (response) => {
         this.marcas = response.response;
       },
@@ -100,7 +100,7 @@ export class ActualizarModeloComponent {
 
   
   cargarPersonas(): void {
-    this.personaService.listarPersonas().subscribe(
+    this.personaService.findAllPersonas().subscribe(
       (response) => {
         this.personas = response.response;
       },
@@ -112,7 +112,7 @@ export class ActualizarModeloComponent {
 
 
   cargarMateriales(): void {
-    this.materialService.listarMateriales().subscribe(
+    this.materialService.findAllMateriales().subscribe(
       (response) => {
         this.materiales = response.response;
       },
