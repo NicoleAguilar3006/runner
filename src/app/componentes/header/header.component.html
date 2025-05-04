@@ -44,7 +44,7 @@
             <svg>
               <use href="./icons/icon.svg#user-icon"></use>
             </svg>
-            <span>Iniciar secion</span>
+            <span>Iniciar sesión</span>
           </a>
 
           <a class="header-btn_user in-flex" *ngIf="isLoggedIn()" (click)="logout()">
@@ -72,4 +72,19 @@
   <input type="checkbox" class="none" id="checkbox-car" />
   <input type="checkbox" class="none" id="checkbox-menu_bar" />
 
+  <div class="cont-side" id="cont-menu">
+    <div id="mn-side">
+      <div class="mn-head in-flex">
+        <h2>¡Hola!</h2>
+
+        <label for="checkbox-menu_bar" class="label-close">
+          <svg>
+            <use href="./svg/icon.svg#close-icon"></use>
+          </svg>
+        </label>
+      </div>
+      <div class="mn-body">
+      </div>
+    </div>
+  </div>
 </header>

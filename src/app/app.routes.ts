@@ -7,12 +7,17 @@ import { AdminComponent } from './componentes/admin/admin.component';
 import { UserComponent } from './componentes/user/user.component';
 import { authGuard } from './guards/auth.guard';
 import { SignupComponent } from './componentes/account/signup/signup.component';
+import { PasswordComponent } from './componentes/account/password/password.component';
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent },
-    { path: 'listado', component: ListarProductosComponent },
+    
     { path: 'sign-in', 
         component: SigninComponent ,
+        canActivate: [authGuard]
+    },
+    { path: 'update-password', 
+        component: PasswordComponent ,
         canActivate: [authGuard]
     },
     { path: 'sign-up', 
@@ -32,6 +37,5 @@ export const routes: Routes = [
         data: { expectedRole: 'USER' }
         // data: { expectedRole: ['ADMIN', 'MODERATOR'] }
     },
-    // otras rutas
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

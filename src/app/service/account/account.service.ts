@@ -28,7 +28,6 @@ export class AccountService {
     if (typeof window !== 'undefined') {
       localStorage.setItem('token', token);
 
-      // Decodificamos el JWT
       const decoded = this.decodeJWT(token);
       if (decoded) {
         localStorage.setItem('user', JSON.stringify({
@@ -56,6 +55,11 @@ export class AccountService {
     }
   }
 
+  public getUserRol(): string | null {
+    const user = this.getUserData();
+    return user?.rol ?? null;
+  }
+  
   public isLoggedIn(): boolean {
     if (typeof window === 'undefined') {
       return false;

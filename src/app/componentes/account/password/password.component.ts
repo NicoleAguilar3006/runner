@@ -1,19 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { AccountService } from '../../../service/account/account.service';
 import { Signin } from '../../../models/account/signin/signin';
-import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-signin',
+  selector: 'app-password',
   imports: [ReactiveFormsModule, CommonModule, RouterLink],
-  standalone: true,
-  templateUrl: './signin.component.html',
-  styleUrl: './signin.component.css'
+  templateUrl: './password.component.html',
+  styleUrl: './password.component.css'
 })
-
-export class SigninComponent {
+export class PasswordComponent {
   router = inject(Router);
   signinForm: FormGroup;
   errorMessage: string = '';

@@ -1,10 +1,9 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivateFn } from '@angular/router';
 
 export const authGuard: CanActivateFn = (route, state) => {
 
-  if (typeof window === 'undefined') { // colocar esto cada vez que use un local store
-    console.log("Hola me usaste")
+  if (typeof window === 'undefined') {
     return false;
   }
 
@@ -15,5 +14,4 @@ export const authGuard: CanActivateFn = (route, state) => {
   }else{
     return true;
   }
-
 };
