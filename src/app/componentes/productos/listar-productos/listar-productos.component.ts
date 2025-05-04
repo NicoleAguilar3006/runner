@@ -14,6 +14,7 @@ import { Modelo } from '../../../models/modelo';
   templateUrl: './listar-productos.component.html',
   styleUrl: './listar-productos.component.css'
 })
+
 export class ListarProductosComponent {
 
   titulo: string = "Cargando...";
@@ -45,6 +46,7 @@ export class ListarProductosComponent {
   }
 
   cargarProductos(): void {
+
     this.productoService.listarProductos().subscribe(
       data => {
         this.productos = data;

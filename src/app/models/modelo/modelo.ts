@@ -1,7 +1,7 @@
-import { Categoria } from "./categoria";
-import { Marca } from "./marca";
-import { Material } from "./material";
-import { Persona } from "./persona";
+import { Categoria } from "../categoria/categoria";
+import { Marca } from "../marca/marca";
+import { Material } from "../material/material";
+import { Persona } from "../persona/persona";
 
 export interface Modelo {
     id: number;

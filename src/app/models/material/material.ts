@@ -1,4 +1,4 @@
-export interface Talla {
+export interface Material {
     id: number;
     nombre: string;
 }

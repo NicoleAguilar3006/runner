@@ -1,4 +1,4 @@
-export interface Material {
+export interface Marca {
     id: number;
     nombre: string;
 }
