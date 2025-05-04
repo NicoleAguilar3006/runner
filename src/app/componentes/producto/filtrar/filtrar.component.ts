@@ -24,7 +24,6 @@ import { DistritoService } from '../../../service/distrito/distrito.service';
 })
 export class FiltrarComponent {
   
-  signupForm: FormGroup;
 
   selectedColores: number[] = [];
   selectedTallas: number[] = [];
@@ -32,15 +31,6 @@ export class FiltrarComponent {
   selectedMarcas: number[] = [];
   selectedPersonas: number[] = [];
   selectedMateriales: number[] = [];
-
-  filtroProducto: FiltroProducto = {
-    idClr: [],
-    idTll: [],
-    idCtg: [],
-    idMrc: [],
-    idPrn: [],
-    idMtl: []
-  }
 
   onColorChange(color: number, event: any) {
     if (event.target.checked) {
@@ -128,17 +118,7 @@ export class FiltrarComponent {
     private colorService: ColorService,
     private router: Router,
     private fb: FormBuilder,
-  ) {     
-    this.signupForm = this.fb.group({
-    idClr: [0, Validators.required],
-    idTll: [0, Validators.required],
-    idCtg: [0, Validators.required],
-    idMrc: [0, Validators.required],
-    idPrn: [0, Validators.required],
-    idMtl: [0, Validators.required],
-  });
-
-  }
+  ) {}
 
 
   ngOnInit(): void {
