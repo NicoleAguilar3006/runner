@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ModeloRegistrar } from '../../models/modelo-registrar';
 import { Success } from '../../models/success/success';
+import { FiltroModelo } from '../../models/modelo/filtro-modelo';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class ModeloService {
 
   public findAllModelos(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
+  }
+
+  public findByAttributes(modelo: FiltroModelo): Observable<Success> {
+    return this.http.post<Success>(this.urlBase + "/filtros", modelo);
   }
 
   public registrar(modelo: ModeloRegistrar): Observable<Success> {

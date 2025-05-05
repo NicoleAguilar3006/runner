@@ -1,0 +1,235 @@
+.container span{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#filtre{
+    width: 200px;                /* Ajusta el ancho del select */
+    height: 100%;
+    padding: 8px 10px;               /* Espaciado interno */
+    border-radius: 8px;          /* Bordes redondeados */
+    border: 1px solid rgb(255, 0, 0) ;
+    color: #333;                 /* Color del texto */  
+    font-size: 1.1em;
+    appearance: none;            /* Oculta la apariencia predeterminada */
+    -webkit-appearance: none;    /* Para navegadores WebKit */
+    -moz-appearance: none;       /* Para navegadores Firefox */
+}
+
+#filtre:focus {
+    outline: none;              /* Quita el contorno por defecto */
+}
+
+#filtre option {
+    background-color: white;    /* Color de fondo de las opciones */
+    color: black;               /* Color del texto de las opciones */
+}
+
+#cont-prue{
+    width: 85%;
+    margin: 10px auto;
+}
+
+
+#div-filter{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#div-filter .filt-head{
+     margin: 10px 5px;
+     padding-bottom: 10px;
+     border-bottom: 1px  solid rgb(230, 230, 230);
+}
+
+.filt-head h2{
+    font-size: 2em;
+    font-weight: 600;
+    color: rgb(80, 80, 80);
+    padding: 6px;
+    border-left: 10px  solid rgb(80, 80, 80);
+
+}
+
+#div-filter .filt-body{
+    width: 100%;
+    padding: 0px 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.filt-body .item-filter{
+    width: 100%;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+
+.item-filter h5{
+    padding: 15px 20px 15px 0;
+    font-size: 1.2em;
+    color: rgb(80, 80, 80);
+    position: relative;
+}
+
+.item-filter h5::first-letter {
+    text-transform: uppercase;
+}
+
+.item-filter > div {
+    width: 100%;
+    max-height: 0;
+    overflow: scroll;
+    transition: max-height .3s ease;
+}
+
+.item-filter > div.active {
+    max-height: 200px;
+    transition: max-height .4s ease;
+}
+
+
+.item-filter > div::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 5px;
+}
+
+.item-filter > div::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.item-filter .ul-filter{
+    padding: 0px 10px 10px;
+}
+
+.ul-filter li{
+    padding: 2px 0;
+}
+
+.ul-filter li label{
+    padding: 0px 5px;
+}
+
+
+
+.filt-footer{
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: relative;
+    position: sticky;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.filt-footer button{
+    width: 100%;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+/*###########################*/
+/*###########################*/
+/*###########################*/
+/*###########################*/
+
+.pgfilter{
+    width: 100%;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 120px auto;
+    gap: 10px;
+}
+
+.hola{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.papa{
+    width: 100%;
+    padding: 20px 40px;
+    background-color: rgb(255, 255, 255);
+}
+
+.pgfilter div:nth-child(1){
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+#ul-prod{
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+/*###########################*/
+/*###########################*/
+/*###########################*/
+/*###########################*/
+
+
+.item-prod{
+    width: 240px;
+    height: 350px;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    background: rgb(255, 255, 255);
+}
+
+.item-prod .cont-img{
+    width: 100%;
+    height: 60%;
+    align-content: center;
+}
+
+.cont-img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.item-prod .cont-info{
+    width: 100%;
+    height: 40%;
+    padding: 15px 10px 0;
+    color: rgb(50, 50, 50);
+}
+
+.cont-info .prod-title{
+    width: 100%;
+    padding: 5px 0px 10px;
+    text-align: center;
+}
+
+.cont-info .prod-title h3{
+    text-transform: uppercase;
+}
+
+
+.cont-info ul{
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto 35px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cont-info ul > li{
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(255, 174, 82);
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+}
+.cont-info ul > li:nth-child(3) {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
+.cont-info button{
+    width: 100%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
