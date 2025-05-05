@@ -11,11 +11,19 @@ export class ColorService {
   private urlBase = 'http://localhost:8080/api/color';
   constructor(private http: HttpClient) { }
 
-  findAll(): Observable<Success> {
+  public findAll(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
 
-  add(color: Color): Observable<Success> {
+  public add(color: Color): Observable<Success> {
     return this.http.post<Success>(this.urlBase, color);
+  }
+
+  public edit(color: Color, id: number): Observable<Success> {
+    return this.http.put<Success>(this.urlBase + "/" + id, color);
+  }
+  
+  public delete(id: number): Observable<Success> {
+    return this.http.delete<Success>(this.urlBase + "/" + id);
   }
 }

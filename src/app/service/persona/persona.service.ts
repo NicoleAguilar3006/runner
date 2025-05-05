@@ -12,10 +12,19 @@ export class PersonaService {
 
   constructor(private http: HttpClient) { }
 
-  findAll(): Observable<Success> {
+  public findAll(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
+  
   public add(persona: Persona): Observable<Success> {
     return this.http.post<Success>(this.urlBase, persona);
+  }
+
+  public edit(persona: Persona, id: number): Observable<Success> {
+    return this.http.put<Success>(this.urlBase + "/" + id, persona);
+  }
+
+  public delete(id: number): Observable<Success> {
+    return this.http.delete<Success>(this.urlBase + "/" + id);
   }
 }
