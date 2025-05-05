@@ -338,9 +338,7 @@ header svg {
     margin: 0px 10px;
 }
 
-.mn-head,
-.cr-head,
-.lg-head {
+.mn-head{
     width: 100%;
     height: 10%;
     justify-content: space-between;
@@ -356,17 +354,38 @@ header svg {
     /* Espacio dentro del div */
 }
 
-.mn-body::-webkit-scrollbar,
-.cr-body::-webkit-scrollbar {
+.mn-body::-webkit-scrollbar {
     width: 5px;
     border-radius: 40px;
 }
 
-.mn-body::-webkit-scrollbar-thumb,
-.cr-body::-webkit-scrollbar-thumb {
+.mn-body::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.5);
 }
 
+.mn-body > .mn-item {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: 300ms all;
+}
+
+.mn-body > .mn-item > a{
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(151, 151, 151);
+}
+.mn-body > .mn-item:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mn-body > .mn-item:hover a{
+    color: rgb(255, 191, 42);
+}
 
 /* Al inicio, el ícono blanco es invisible */
 #icon-heart-white {

@@ -47,7 +47,7 @@ export class RegistrarProductosComponent {
   }
 
   cargarColores(): void {
-    this.colorService.findAllColores().subscribe(
+    this.colorService.findAll().subscribe(
       (response) => {
         this.colores = response.response;
         console.log(this.colores); 
@@ -59,7 +59,7 @@ export class RegistrarProductosComponent {
   }
 
   cargarTallas(): void {
-    this.tallaService.findAllTallas().subscribe(
+    this.tallaService.findAll().subscribe(
       (response) => {
         this.tallas = response.response;
         console.log(this.tallas); 
@@ -71,7 +71,7 @@ export class RegistrarProductosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.findAllModelos().subscribe(
+    this.modeloService.findAll().subscribe(
       (response) => {
         this.modelos = response.response;
         console.log(this.modelos); 

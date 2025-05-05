@@ -65,7 +65,7 @@ export class ActualizarProductosComponent {
   }
 
   cargarColores(): void {
-    this.colorService.findAllColores().subscribe(
+    this.colorService.findAll().subscribe(
       (response) => {
         this.colores = response.response;
       },
@@ -76,7 +76,7 @@ export class ActualizarProductosComponent {
   }
 
   cargarTallas(): void {
-    this.tallaService.findAllTallas().subscribe(
+    this.tallaService.findAll().subscribe(
       (response) => {
         this.tallas = response.response;
       },
@@ -87,7 +87,7 @@ export class ActualizarProductosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.findAllModelos().subscribe(
+    this.modeloService.findAll().subscribe(
       (response) => {
         this.modelos = response.response;
       },

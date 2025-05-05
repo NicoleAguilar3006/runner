@@ -1,0 +1,57 @@
+
+
+<div class="in-flex" id="cont-login">
+    <div class="cont-form">
+        <div class="form-head">
+            <h2>Crear cuenta</h2>
+        </div>
+        <div class="form-body">
+            <form [formGroup]="form" (ngSubmit)="registrarModelo()">
+                <div class="sp-form in-grid">
+                    <div class="item in-flex">
+                        <input type="text" formControlName="descripcion" id="descripcion" />
+                        <label for="descripcion">Descripcion</label>
+                    </div>
+                    <div class="item in-flex">
+                        <input type="text" formControlName="info" id="info"/>
+                        <label for="info">Informacion</label>
+                    </div>
+                    <div class="item in-flex">
+                        <input type="text" formControlName="precio" id="precio"/>
+                        <label for="precio">Precio</label>
+                    </div>
+
+
+                    <div class="item in-flex">
+                        <select id="distrito" class="form-select" formControlName="idCtg" required>
+                          <option *ngFor="let categorias of listCategorias" [value]="categorias.id">{{ categorias.nombre }}</option>
+                        </select>
+                        <label for="">Distrito</label>
+                    </div>
+                    <div class="item in-flex">
+                        <select id="distrito" class="form-select" formControlName="idMrc" required>
+                          <option *ngFor="let marcas of listMarcas" [value]="marcas.id">{{ marcas.nombre }}</option>
+                        </select>
+                        <label for="">Distrito</label>
+                    </div>
+                    <div class="item in-flex">
+                        <select id="distrito" class="form-select" formControlName="idPrn" required>
+                          <option *ngFor="let personas of listPersonas" [value]="personas.id">{{ personas.nombre }}</option>
+                        </select>
+                        <label for="">Distrito</label>
+                    </div>
+                    <div class="item in-flex">
+                        <select id="distrito" class="form-select" formControlName="idMtl" required>
+                          <option *ngFor="let materiales of listMateriales" [value]="materiales.id">{{ materiales.nombre }}</option>
+                        </select>
+                        <label for="">Distrito</label>
+                    </div>
+                </div>
+
+                <div class="cont-submit">
+                    <input id="inp-login" type="submit" value="Registrar" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

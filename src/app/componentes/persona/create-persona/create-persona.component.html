@@ -1,0 +1,24 @@
+<div class="in-flex" id="cont-login">
+    <div class="cont-form">
+        <div class="form-head">
+            <h2>Iniciar sesión</h2>
+        </div>
+        <div class="form-body">
+
+            <form [formGroup]="form" (ngSubmit)="registrarPersona()">
+                <div class="sn-form in-flex">
+                    <div class="item in-flex">
+                        <input type="text" formControlName="nombre" id="nombre" />
+                        <label for="nombre">Nombre</label>
+                    </div>
+                </div>
+
+                <div class="cont-submit">
+                    <input id="inp-login" type="submit" value="Registrar" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>

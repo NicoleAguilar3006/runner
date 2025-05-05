@@ -115,3 +115,86 @@ body::-webkit-scrollbar-thumb {
     }
 
 }
+
+
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+
+.container-z{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.2);
+    animation: aparecerModal 0.3s ease-out forwards;
+}
+
+.md-confirmation{
+    width: 38vw;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px auto;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+    animation: fadeInDialog 0.3s ease-out forwards;
+}
+@keyframes fadeInDialog {
+    from {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(70%);
+    }
+  }
+
+  @keyframes aparecerModal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+.md-confirmation *{
+    color: #5e5e5e;
+    fill: rgb(94, 94, 94);
+}
+
+.md-header h2{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.md-header{
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 10px 20px;
+}
+.md-footer{  
+    justify-content: center;
+    gap: 10px;
+}
+.md-footer button{  
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: 500ms background-color;
+}
+
+.md-footer .md-aceptar:hover{
+    background-color: rgb(255, 203, 83);
+}
+
+.md-footer .md-cancelar:hover{
+    background-color: rgb(194, 2, 2);
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="exhibitor in-grid" *ngIf="cargoLista">
+
+    <div class="exb-item" *ngFor="let categorias of listDistrito">
+      <div class="card text-center shadow-sm border border-2 rounded-4 p-4 h-100 hover-card">
+        <h2 class="mb-3"><strong>{{categorias.nombre}}</strong></h2>
+      </div>
+    </div>
+
+  </div>
+
+</div>

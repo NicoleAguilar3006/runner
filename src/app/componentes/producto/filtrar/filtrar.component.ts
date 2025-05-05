@@ -140,42 +140,42 @@ export class FiltrarComponent {
   }
 
   findAllCategoria(): void {
-    this.categoriaService.findAllCategorias().subscribe(
+    this.categoriaService.findAll().subscribe(
       data => {
         this.listCategorias = data;
       }
     )
   }
   findAllMarca(): void {
-    this.marcaService.findAllMarcas().subscribe(
+    this.marcaService.findAll().subscribe(
       data => {
         this.listMarcas = data;
       }
     )
   }
   findAllPersona(): void {
-    this.personaService.findAllPersonas().subscribe(
+    this.personaService.findAll().subscribe(
       data => {
         this.listPersonas = data;
       }
     )
   }
   findAllMaterial(): void {
-    this.materialService.findAllMateriales().subscribe(
+    this.materialService.findAll().subscribe(
       data => {
         this.listMateriales = data;
       }
     )
   }
   findAllTalla(): void {
-    this.tallaService.findAllTallas().subscribe(
+    this.tallaService.findAll().subscribe(
       data => {
         this.listTallas = data;
       }
     )
   }
   findAllColor(): void {
-    this.colorService.findAllColores().subscribe(
+    this.colorService.findAll().subscribe(
       data => {
         this.listColores = data;
       }

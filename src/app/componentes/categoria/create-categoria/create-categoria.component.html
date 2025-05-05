@@ -1,0 +1,50 @@
+<div class="in-flex" id="cont-login">
+    <div class="cont-form">
+        <div class="form-head">
+            <h2>Iniciar sesión</h2>
+        </div>
+        <div class="form-body">
+
+            <form [formGroup]="form" (ngSubmit)="registrarCategoria()">
+                <div class="sn-form in-flex">
+                    <div class="item in-flex">
+                        <input type="text" formControlName="nombre" id="nombre" />
+                        <label for="nombre">Nombre</label>
+                    </div>
+                </div>
+
+                <div class="cont-submit">
+                    <button (click)="requiresConfirmation(true)">Agregar</button>
+                    <a routerLink="/modelo/list">
+                        Volver a la lista
+                    </a>
+                </div>
+                <div class="container-z" *ngIf="isConfirmed">
+                    <div class="md-confirmation in-grid">
+                        <div class="md-header in-flex">
+                            <animated-icons
+                                src="https://animatedicons.co/get-icon?name=plus&style=minimalistic&token=3a3309ff-41ae-42ce-97d0-5767a4421b43"
+                                trigger="loop"
+                                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":2.1,"defaultColours":{"group-1":"#5E5E5EFF","group-2":"#5E5E5EFF","background":"#FFFFFF00"}}'
+                                height="60" width="60"></animated-icons>
+                            <h2>¿Estas seguro de lo que vas a hacer?</h2>
+                        </div>
+                        <!--
+                        <div class="md-body">
+
+                        </div>
+                        -->
+                        <div class="md-footer in-flex">
+                            <button class="md-aceptar" type="submit">
+                                Aceptar
+                            </button>
+                            <button class="md-cancelar" (click)="requiresConfirmation(false)">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

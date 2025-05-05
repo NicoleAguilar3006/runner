@@ -13,7 +13,7 @@ export class ModeloService {
 
   constructor(private http: HttpClient) { }
 
-  public findAllModelos(): Observable<Success> {
+  public findAll(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
 
@@ -21,7 +21,7 @@ export class ModeloService {
     return this.http.post<Success>(this.urlBase + "/filtros", modelo);
   }
 
-  public registrar(modelo: ModeloRegistrar): Observable<Success> {
+  public add(modelo: ModeloRegistrar): Observable<Success> {
     return this.http.post<Success>(this.urlBase, modelo);
   }
 

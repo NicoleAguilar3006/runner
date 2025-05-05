@@ -43,7 +43,7 @@ export class ListarModelosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.findAllModelos().subscribe(
+    this.modeloService.findAll().subscribe(
       data => {
         this.modelos = data;
         this.titulo = 'Listado de modelos';
@@ -58,7 +58,7 @@ export class ListarModelosComponent {
   }
 
   cargarMarcas(): void {
-    this.marcaService.findAllMarcas().subscribe(
+    this.marcaService.findAll().subscribe(
       (response) => {
         this.marcas = response.response;
         console.log(this.marcas);

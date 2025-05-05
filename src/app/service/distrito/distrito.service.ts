@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Success } from '../../models/success/success';
 import { Observable } from 'rxjs';
+import { Distrito } from '../../models/distrito/distrito';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,11 @@ export class DistritoService {
     private http: HttpClient
   ) { }
 
-  public findAllDistrito(): Observable<Success> {
+  public findAll(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
 
+  add(distrito: Distrito): Observable<Success> {
+    return this.http.post<Success>(this.urlBase, distrito);
+  }
 }

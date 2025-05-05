@@ -13,11 +13,11 @@ export class CategoriaService {
 
   constructor(private http: HttpClient) { }
 
-  public findAllCategorias(): Observable<Success> {
+  public findAll(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
 
-  public registrar(categoria: Categoria): Observable<Success> {
+  public add(categoria: Categoria): Observable<Success> {
     return this.http.post<Success>(this.urlBase, categoria);
   }
 }

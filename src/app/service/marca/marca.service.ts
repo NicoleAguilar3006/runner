@@ -13,11 +13,11 @@ export class MarcaService {
 
   constructor(private http: HttpClient) { }
 
-  public findAllMarcas(): Observable<Success> {
+  public findAll(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
 
-  public registrar(marca: Marca): Observable<Success> {
+  public add(marca: Marca): Observable<Success> {
     return this.http.post<Success>(this.urlBase, marca);
   }
 }

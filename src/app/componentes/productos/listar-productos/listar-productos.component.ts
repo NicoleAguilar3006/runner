@@ -64,7 +64,7 @@ export class ListarProductosComponent {
   }
 
   cargarModelos(): void {
-    this.modeloService.findAllModelos().subscribe(
+    this.modeloService.findAll().subscribe(
       (response) => {
         this.modelos = response.response;
         console.log(this.modelos); 

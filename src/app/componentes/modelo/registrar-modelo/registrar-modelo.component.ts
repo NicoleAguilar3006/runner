@@ -20,6 +20,7 @@ import { MaterialService } from '../../../service/material/material.service';
   templateUrl: './registrar-modelo.component.html',
   styleUrl: './registrar-modelo.component.css'
 })
+
 export class RegistrarModelosComponent implements OnInit {
   nuevoModelo: ModeloRegistrar = {
  id: 0,
@@ -52,14 +53,14 @@ export class RegistrarModelosComponent implements OnInit {
   }
 
   cargarDatos(): void {
-    this.categoriaService.findAllCategorias().subscribe(res => this.categorias = res.response);
-    this.marcaService.findAllMarcas().subscribe(res => this.marcas = res.response);
-    this.personaService.findAllPersonas().subscribe(res => this.personas = res.response);
-    this.materialService.findAllMateriales().subscribe(res => this.materiales = res.response);
+    this.categoriaService.findAll().subscribe(res => this.categorias = res.response);
+    this.marcaService.findAll().subscribe(res => this.marcas = res.response);
+    this.personaService.findAll().subscribe(res => this.personas = res.response);
+    this.materialService.findAll().subscribe(res => this.materiales = res.response);
   }
 
   registrarModelo(): void {
-    this.modeloService.registrar(this.nuevoModelo).subscribe(
+    this.modeloService.add(this.nuevoModelo).subscribe(
       res => {
         this.mensajeConfirmacion = 'Modelo registrado con éxito';
         this.nuevoModelo = {

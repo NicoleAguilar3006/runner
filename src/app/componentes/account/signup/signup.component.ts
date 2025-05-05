@@ -41,7 +41,7 @@ export class SignupComponent {
   }
 
   cargarDistrito(): void {
-    this.distritoService.findAllDistrito().subscribe(
+    this.distritoService.findAll().subscribe(
       (response) => {
         this.distritos = response.response;
       },
