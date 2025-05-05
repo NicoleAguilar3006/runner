@@ -103,7 +103,7 @@ export const routes: Routes = [
         path: 'admin',
         component: AdminComponent,
         canActivate: [roleGuard],
-        data: { expectedRole: 'USER' }
+        data: { expectedRole: 'ADMIN' }
     },
     {
         path: 'usuario',

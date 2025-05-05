@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CategoriaService } from '../../../service/categoria/categoria.service';
 import { Router } from '@angular/router';
@@ -10,12 +10,15 @@ import { CommonModule } from '@angular/common';
   selector: 'app-create-color',
   imports: [ReactiveFormsModule, CommonModule, FormsModule],
   templateUrl: './create-color.component.html',
-  styleUrl: './create-color.component.css'
+  styleUrl: './create-color.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class CreateColorComponent {
   form: FormGroup;
-  mensajeConfirmacion: string = '';
+  mensaje: string = '';
+  isError: boolean = false;
+  isSuccessful: boolean = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -37,14 +40,16 @@ export class CreateColorComponent {
 
     this.colorService.add(dato).
       subscribe(response => {
-        this.mensajeConfirmacion = 'Categoria registrada con éxito'; 
+        this.isSuccessful = true
+        this.mensaje = 'Categoria registrada con éxito'; 
         
         setTimeout(() => {
-          this.router.navigate(['/listadoCategorias']);
+          this.router.navigate(['/categoria/list']);
         }, 3000);
       },
-        error => {
-          console.error('Error al registrar la categoria:', error);
+        e => {
+          this.isError = true;
+          this.mensaje = e.error.message;
         }
       );
   }
