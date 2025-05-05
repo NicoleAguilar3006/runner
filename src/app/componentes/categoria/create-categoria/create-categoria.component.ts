@@ -3,7 +3,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Categoria } from '../../../models/categoria/categoria';
 import { CategoriaService } from '../../../service/categoria/categoria.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-create-categoria',
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
+    RouterLink
   ],
   templateUrl: './create-categoria.component.html',
   styleUrl: './create-categoria.component.css',

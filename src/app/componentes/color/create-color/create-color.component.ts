@@ -16,33 +16,36 @@ import { CommonModule } from '@angular/common';
 
 export class CreateColorComponent {
   form: FormGroup;
+
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private colorService: ColorService,
     private router: Router
   ) {
     this.form = this.fb.group({
       nombre: ['', Validators.required]
     });
-   }
+  }
 
   registrarColor() {
     if (this.form.invalid) return;
-    
+
     const dato: Color = {
-      id : 0,
-      nombre : this.form.value.nombre
+      id: 0,
+      nombre: this.form.value.nombre
     }
 
     this.colorService.add(dato).
       subscribe(response => {
+
         this.isSuccessful = true
-        this.mensaje = 'Categoria registrada con éxito'; 
-        
+
+        this.mensaje = 'Categoria registrada con éxito';
+
         setTimeout(() => {
           this.router.navigate(['/categoria/list']);
         }, 3000);

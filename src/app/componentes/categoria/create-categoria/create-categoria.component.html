@@ -14,11 +14,14 @@
                 </div>
 
                 <div class="cont-submit">
-                    <button (click)="requiresConfirmation(true)">Agregar</button>
-                    <a routerLink="/modelo/list">
+                    <button (click)="requiresConfirmation(true)" type="button">Agregar</button>
+
+                    <a routerLink="/categoria/list">
                         Volver a la lista
                     </a>
                 </div>
+
+
                 <div class="container-z" *ngIf="isConfirmed">
                     <div class="md-confirmation in-grid">
                         <div class="md-header in-flex">
@@ -27,6 +30,7 @@
                                 trigger="loop"
                                 attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":2.1,"defaultColours":{"group-1":"#5E5E5EFF","group-2":"#5E5E5EFF","background":"#FFFFFF00"}}'
                                 height="60" width="60"></animated-icons>
+                                
                             <h2>¿Estas seguro de lo que vas a hacer?</h2>
                         </div>
                         <!--
@@ -38,7 +42,7 @@
                             <button class="md-aceptar" type="submit">
                                 Aceptar
                             </button>
-                            <button class="md-cancelar" (click)="requiresConfirmation(false)">
+                            <button class="md-cancelar" type="button" (click)="requiresConfirmation(false)">
                                 Cancelar
                             </button>
                         </div>
