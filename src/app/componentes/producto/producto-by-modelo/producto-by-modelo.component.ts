@@ -24,7 +24,6 @@ export class ProductoByModeloComponent {
     response: [],
   };
 
-
   modelo = crearModelo();
   id: number = 0;
   mensaje: string = '';
@@ -71,8 +70,33 @@ export class ProductoByModeloComponent {
         console.log("soy modelo ",this.modelo)
       },
       error => {
-        console.error('Error:', error);
+        console.error('Error al registrar la categoría:', error);
       }
     )
+  }
+
+  deleteProducto(): void {
+    this.isConfirmed = false;
+    this.productoService.delete(this.idPrd+"").subscribe(
+      data => {
+        console.log(data)
+        this.mensaje = data.response;
+        this.isSuccessful = true
+        this.listProductoByModelo(this.modelo.id + '')
+        setTimeout(() => {;
+          this.isSuccessful = false
+        }, 2000);
+      },
+      e => {
+        this.isError = true;
+        this.mensaje = e.error.message;
+      }
+    )
+  }
+
+  requiresConfirmation(isConfirmed: boolean) {
+    this.mensaje = '¿Estás seguro de que deseas eliminar este producto?';
+    this.isConfirmed = isConfirmed;
+    console.log(isConfirmed);
   }
 }
