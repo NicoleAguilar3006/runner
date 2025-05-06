@@ -2,12 +2,9 @@ import { Component } from '@angular/core';
 import { ModeloService } from '../../../service/modelo/modelo.service';
 import { Success } from '../../../models/success/success';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Modelo } from '../../../models/modelo/modelo';
-import { Producto } from '../../../models/producto/producto';
-import { ProductoDTO } from '../../../models/producto/producto-dto';
-import { ModeloByProductos } from '../../../models/modelo/modelo-by-productos';
 import { crearModelo } from '../../../utils/factories';
 import { CommonModule } from '@angular/common';
+import { ProductoModelo } from '../../../models/producto/producto-modelo';
 
 @Component({
   selector: 'app-producto-by-modelo',
@@ -27,7 +24,7 @@ export class ProductoByModeloComponent {
 
   modelo = crearModelo();
 
-  listProducto: ProductoDTO[] = [
+  listProducto: ProductoModelo[] = [
     {
       id: 0,
       stock: 0,

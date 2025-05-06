@@ -2,24 +2,23 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Producto } from '../../../models/producto/producto';
 import { ProductoDTO } from '../../../models/producto/producto-dto';
 import { Color } from '../../../models/color/color';
 import { Talla } from '../../../models/talla/talla';
 import { Modelo } from '../../../models/modelo/modelo';
+import { ProductoService } from '../../../service/producto/producto.service';
 import { ColorService } from '../../../service/color/color.service';
 import { TallaService } from '../../../service/talla/talla.service';
 import { ModeloService } from '../../../service/modelo/modelo.service';
-import { ProductoService } from '../../../service/producto/producto.service';
 
 @Component({
-  selector: 'app-edit-producto',
+  selector: 'app-create-producto',
   imports: [ReactiveFormsModule, CommonModule, RouterLink],
-  templateUrl: './edit-producto.component.html',
-  styleUrl: './edit-producto.component.css',
+  templateUrl: './create-producto.component.html',
+  styleUrl: './create-producto.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class EditProductoComponent {
+export class CreateProductoComponent {
   form: FormGroup;
 
   producto: ProductoDTO = {
@@ -58,22 +57,7 @@ export class EditProductoComponent {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-
-    if (id) {
-      this.productoService.findById(id).subscribe(
-        response => {
-          console.log(response)
-          this.producto = response.response;
-          this.cargarDatos();
-        },
-        error => {
-          console.error('Error al registrar la categoría:', error);
-        }
-      );
-    } else {
-      console.error('ID no encontrado en la URL');
-    }
+    this.cargarDatos();
   }
 
   cargarDatos(): void {
@@ -82,7 +66,7 @@ export class EditProductoComponent {
     this.modeloService.findAll().subscribe(res => this.listModelos = res.response);
   }
 
-  editProducto() {
+  saveProducto() {
     if (this.form.invalid) return;
     this.isConfirmed = false;
 
@@ -94,7 +78,7 @@ export class EditProductoComponent {
       idMdl: this.form.value.idMdl
     };
 
-    this.productoService.edit(dato, this.producto.id).
+    this.productoService.save(dato).
 
       subscribe(response => {
 

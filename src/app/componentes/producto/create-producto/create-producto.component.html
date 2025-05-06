@@ -4,11 +4,10 @@
             <h2>{{ titulo }}</h2>
         </div>
         <div class="form-body">
-            <form [formGroup]="form" (ngSubmit)="editProducto()">
+            <form [formGroup]="form" (ngSubmit)="saveProducto()">
                 <div class="sp-form in-grid">
                     <div class="item in-flex">
-                        <input type="text" formControlName="stock" id="stock"
-                            [(ngModel)]="producto.stock" />
+                        <input type="text" formControlName="stock" id="stock" [(ngModel)]="producto.stock" />
                         <label for="stock">Stock</label>
                     </div>
 
@@ -23,7 +22,8 @@
                     <div class="item in-flex">
                         <select id="distrito" class="form-select" formControlName="idMdl" [(ngModel)]="producto.idMdl"
                             required>
-                            <option *ngFor="let modelo of listModelos" [value]="modelo.id">{{ modelo.descripcion }}</option>
+                            <option *ngFor="let modelo of listModelos" [value]="modelo.id">{{ modelo.descripcion }}
+                            </option>
                         </select>
                         <label for="">Distrito</label>
                     </div>

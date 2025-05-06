@@ -1,8 +1,9 @@
 import { ModeloByProductos } from "../models/modelo/modelo-by-productos";
 import { Producto } from "../models/producto/producto";
 import { ProductoDTO } from "../models/producto/producto-dto";
+import { ProductoModelo } from "../models/producto/producto-modelo";
 
-export function crearProducto(): ProductoDTO {
+export function crearProducto(): ProductoModelo {
   return {
     id: 0,
     stock: 0,

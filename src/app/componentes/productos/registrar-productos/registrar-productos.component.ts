@@ -83,7 +83,7 @@ export class RegistrarProductosComponent {
   }
 
   registrarProducto() {
-    this.productoService.registrar(this.nuevoProducto).
+    this.productoService.save(this.nuevoProducto).
       subscribe(response => {
         this.nuevoProducto = {
           id: 0,

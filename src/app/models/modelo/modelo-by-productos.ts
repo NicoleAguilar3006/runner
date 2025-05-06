@@ -4,6 +4,7 @@ import { Material } from "../material/material";
 import { Persona } from "../persona/persona";
 import { Producto } from "../producto/producto";
 import { ProductoDTO } from "../producto/producto-dto";
+import { ProductoModelo } from "../producto/producto-modelo";
 
 export interface ModeloByProductos {
         id: number;
@@ -19,5 +20,5 @@ export interface ModeloByProductos {
         marca: Marca;
         persona: Persona;
         material: Material;
-        productos: ProductoDTO[];
+        productos: ProductoModelo[];
 }

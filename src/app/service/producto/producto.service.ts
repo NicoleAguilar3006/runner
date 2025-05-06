@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ProductoRegistrar } from '../../models/producto-registrar';
 import { Success } from '../../models/success/success';
 import { FiltroProducto } from '../../models/producto/filtro-producto';
+import { ProductoDTO } from '../../models/producto/producto-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class ProductoService {
     return this.http.post<Success>(this.urlBase + "/filtros", producto);
   }
 
-  public registrar(producto: ProductoRegistrar): Observable<Success> {
+  public save(producto: ProductoDTO): Observable<Success> {
     return this.http.post<Success>(this.urlBase, producto);
   }
 
@@ -30,7 +31,7 @@ export class ProductoService {
     return this.http.get<Success>(this.urlBase + `/${id}`);
   }
 
-  public edit(id: string, producto: ProductoRegistrar): Observable<Success> {
+  public edit(producto: ProductoRegistrar, id: number): Observable<Success> {
     return this.http.put<Success>(this.urlBase + `/${id}`, producto);
   }
 

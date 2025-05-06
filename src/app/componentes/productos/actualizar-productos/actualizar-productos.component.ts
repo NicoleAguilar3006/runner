@@ -98,7 +98,7 @@ export class ActualizarProductosComponent {
   }
 
   actualizarProducto(): void {
-    this.productoService.edit(this.producto.id.toString(), this.producto).subscribe(
+    this.productoService.edit(this.producto, this.producto.id).subscribe(
       (response) => {
         this.mensajeConfirmacion = 'Producto actualizado con éxito'; 
         console.log(response);
