@@ -1,0 +1,245 @@
+#cont-login {
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cont-form {
+    width: 100%;
+    padding: 60px 40px;
+    margin: 10px;
+}
+
+.form-head {
+    width: 100%;
+    text-align: center;
+    padding: 0px 0 20px;
+}
+
+
+.form-head>h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: rgb(94, 94, 94);
+}
+
+.cont-form>.form-body {
+    width: 100%;
+    height: 78%;
+    padding: 10px 20px;
+    overflow: auto;
+}
+
+.cont-form>.form-footer {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+}
+.cont-form>.form-footer > label{
+    cursor: pointer;
+}
+
+.cont-form>.form-footer strong > *{
+    font-weight: 600;
+}
+
+.form-body .item {
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    margin: 8px 0;
+    justify-content: center;
+}
+
+.item-check{
+    width: 100%;
+    padding: 0px 5px ;
+    gap: 10px;
+    color: rgb(93, 93, 93);
+}
+
+.item-check label{
+    cursor: pointer;
+}
+
+
+
+.form-body .item input {
+    width: 100%;
+    height: 36px;
+    padding: 0px 5px;
+    border: none;
+    border-bottom: 1px rgb(87, 87, 87) solid;
+}
+
+.form-body .item label {
+    text-align: start;
+    color: rgb(94, 94, 94);
+}
+
+.form-body .item a {
+    text-align: end;
+}
+
+
+.item label {
+    position: absolute;
+    padding: 5px 4px;
+    pointer-events: none;
+    font-size: 1em;
+    transition: .4s all;
+}
+
+.item input:valid~label,
+.item input:focus~label {
+    transform: translateY(-21px);
+}
+
+.form-body .sn-form {
+    gap: 10px;
+    flex-direction: column;
+}
+
+#goo-login {
+    width: 90%;
+    height: 36px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgb(255, 255, 255);
+    transition: .5s background-color, .5s box-shadow;
+}
+
+#goo-login:hover {
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.sp-form {
+    grid-template-rows: repeat(3, auto);
+    /* Tres filas */
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas para la primera y tercera fila */
+    gap: 10px;
+    /* Espaciado opcional entre los elementos */
+}
+
+.sp-form>.item:nth-child(1) {
+    grid-column: 1 / span 2;
+    /* Ocupa dos columnas */
+    grid-row: 1 / 2;
+    /* Segunda fila */
+}
+
+.sp-form>.item:nth-child(2) {
+    grid-column: 1 / span 2;
+    /* Segunda columna */
+    grid-row: 2 / 3;
+    /* Primera fila */
+}
+
+.sp-form>.item:nth-child(3) {
+    grid-column: 1 / 2;
+    /* Ocupa dos columnas */
+    grid-row: 3 / 4;
+    /* Segunda fila */
+}
+
+.sp-form>.item:nth-child(4) {
+    grid-column: 2 / 3;
+    /* Segunda columna */
+    grid-row: 3 / 4;
+    /* Tercera fila */
+}
+
+.sp-form>.item:nth-child(5) {
+    grid-column: 1 / span 2;
+    /* Ocupa dos columnas */
+    grid-row: 4 / 5;
+    /* Tercera fila */
+}
+
+.sp-form>.item:nth-child(6) {
+    grid-column: 1 / span 2;
+    /* Ocupa dos columnas, si quieres que ocupe toda la tercera fila también */
+    grid-row: 5 / 6;
+}
+
+.sp-form>.item-check:nth-child(7) {
+    grid-column: 1 / span 2;
+    /* Ocupa dos columnas, si quieres que ocupe toda la tercera fila también */
+    grid-row: 6 / 7;
+}
+.sp-form>.item-check:nth-child(8) {
+    grid-column: 1 / span 2;
+    /* Ocupa dos columnas, si quieres que ocupe toda la tercera fila también */
+    grid-row: 7 / 8;
+}
+
+.cont-submit {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0 10px;
+}
+
+.cont-submit button{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 191, 41);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.cont-submit a{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+    background-color: rgb(13, 145, 253);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.form-body input[type=submit] {
+    width: 90%;
+    height: 36px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    border-radius: 10px;
+    background-color: rgb(255, 191, 41);
+    /*border:  1px solid rgba(0, 0, 0, 0.2);*/
+    border: 0;
+    transition: .5s background-color, .5s border, .5s box-shadow;
+}
+
+.form-body input[type=submit]:hover {
+    background-color: rgb(255, 136, 0);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-body>h3 {
+    text-align: center;
+    font-size: 1.8em;
+    color: rgb(94, 94, 94);
+    margin: 0 0 10px;
+}
+
+.form-body>span {
+    text-align: center;
+    display: inline-block;
+    color: rgb(94, 94, 94);
+    margin: 0px 0 15px;
+}

@@ -34,7 +34,7 @@ export class ModeloService {
     return this.http.put<Success>(this.urlBase + `/${id}`, modelo);
   }
 
-  public delete(id: string): Observable<Success> {
+  public delete(id: number): Observable<Success> {
     return this.http.delete<Success>(this.urlBase + `/${id}`);
   }
 

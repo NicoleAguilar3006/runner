@@ -91,7 +91,7 @@ export class ListarModelosComponent {
     });
   }
 
-  eliminarModelo(id:string): void {
+  eliminarModelo(id:number): void {
     if (confirm('¿Estás seguro de que quieres eliminar este modelo?')) {
     this.modeloService.delete(id).subscribe(
       (response) => {

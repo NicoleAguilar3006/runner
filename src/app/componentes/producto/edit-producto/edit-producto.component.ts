@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from '../../../models/producto/producto';
 import { ProductoDTO } from '../../../models/producto/producto-dto';
 import { Color } from '../../../models/color/color';
@@ -14,7 +14,7 @@ import { ProductoService } from '../../../service/producto/producto.service';
 
 @Component({
   selector: 'app-edit-producto',
-  imports: [ReactiveFormsModule, CommonModule, RouterLink],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './edit-producto.component.html',
   styleUrl: './edit-producto.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -98,11 +98,11 @@ export class EditProductoComponent {
 
       subscribe(response => {
 
-        this.mensaje = 'Color actualizado con éxito';
+        this.mensaje = 'Producto actualizado con éxito';
         this.isSuccessful = true
 
         setTimeout(() => {
-          this.router.navigate(['/modelo/list']);
+          this.router.navigate(['/producto/info/' + this.producto.idMdl]);
         }, 3000);
 
       },

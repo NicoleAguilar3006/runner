@@ -25,12 +25,11 @@ export class ProductoByModeloComponent {
   };
 
   modelo = crearModelo();
-  idPrd: number = 0;
+  id: number = 0;
   mensaje: string = '';
   isConfirmed: boolean = false;
   isError: boolean = false;
   isSuccessful: boolean = false;
-
   listProducto: ProductoModelo[] = [
     {
       id: 0,
