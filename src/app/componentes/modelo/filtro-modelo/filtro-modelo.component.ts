@@ -11,14 +11,21 @@ import { ColorService } from '../../../service/color/color.service';
 import { Success } from '../../../models/success/success';
 import { FiltroModelo } from '../../../models/modelo/filtro-modelo';
 import { ModeloService } from '../../../service/modelo/modelo.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-filtro-modelo',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterLink],
   templateUrl: './filtro-modelo.component.html',
   styleUrl: './filtro-modelo.component.css'
 })
 export class FiltroModeloComponent {
+  isActiveColor: boolean = false;
+  isActiveTalla: boolean = false;
+  isActiveCategoria: boolean = false;
+  isActiveMarca: boolean = false;
+  isActivePersona: boolean = false;
+  isActiveMaterial: boolean = false;
 
   selectedColores: number[] = [];
   selectedTallas: number[] = [];

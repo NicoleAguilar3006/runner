@@ -40,12 +40,16 @@ import { EditMarcaComponent } from './componentes/marca/edit-marca/edit-marca.co
 import { EditMaterialComponent } from './componentes/material/edit-material/edit-material.component';
 import { EditPersonaComponent } from './componentes/persona/edit-persona/edit-persona.component';
 import { EditTallaComponent } from './componentes/talla/edit-talla/edit-talla.component';
+import { ProductoByModeloComponent } from './componentes/producto/producto-by-modelo/producto-by-modelo.component';
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent },
     { path: 'filtros', component: FiltrarComponent},
     
     { path: 'modelo/create', component: CreateModeloComponent},
+    { path: 'modelo/list', component: FiltroModeloComponent},
+    
+    { path: 'producto/info/:id', component: ProductoByModeloComponent},
 
     { path: 'categoria/list', component: ListCategoriaComponent},
     { path: 'categoria/edit/:id', component: EditCategoriaComponent},

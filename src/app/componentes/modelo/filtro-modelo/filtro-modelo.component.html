@@ -10,10 +10,10 @@
             <aside class="filt-body">
                 <form (ngSubmit)="findByAttributes()">
                     <section class="item-filter">
-                        <h5>
+                        <h5 (click)="isActiveColor = !isActiveColor">
                             Color
                         </h5>
-                        <div class="body-filters active">
+                        <div class="body-filters"  [ngClass]="{ 'active': isActiveColor }">
                             <ul class="ul-filter">
                                 <li *ngFor="let color of listColores.response">
                                     <span>
@@ -28,10 +28,10 @@
                         </div>
                     </section>
                     <section class="item-filter">
-                        <h5>
+                        <h5 (click)="isActiveTalla = !isActiveTalla">
                             Talla
                         </h5>
-                        <div class="body-filters active">
+                        <div class="body-filters"  [ngClass]="{ 'active': isActiveTalla }">
                             <ul class="ul-filter">
                                 <li *ngFor="let talla of listTallas.response">
                                     <span>
@@ -46,10 +46,10 @@
                         </div>
                     </section>
                     <section class="item-filter">
-                        <h5>
+                        <h5 (click)="isActiveCategoria = !isActiveCategoria">
                             Categoría
                         </h5>
-                        <div class="body-filters active">
+                        <div class="body-filters"  [ngClass]="{ 'active': isActiveCategoria }">
                             <ul class="ul-filter">
                                 <li *ngFor="let categoria of listCategorias.response">
                                     <span>
@@ -64,10 +64,10 @@
                         </div>
                     </section>
                     <section class="item-filter">
-                        <h5>
+                        <h5 (click)="isActiveMarca = !isActiveMarca">
                             Marca
                         </h5>
-                        <div class="body-filters active">
+                        <div class="body-filters"  [ngClass]="{ 'active': isActiveMarca }">
                             <ul class="ul-filter">
                                 <li *ngFor="let marca of listMarcas.response">
                                     <span>
@@ -82,10 +82,10 @@
                         </div>
                     </section>
                     <section class="item-filter">
-                        <h5>
+                        <h5 (click)="isActivePersona = !isActivePersona">
                             Persona
                         </h5>
-                        <div class="body-filters active">
+                        <div class="body-filters"  [ngClass]="{ 'active': isActivePersona }">
                             <ul class="ul-filter">
                                 <li *ngFor="let persona of listPersonas.response">
                                     <span>
@@ -100,10 +100,10 @@
                         </div>
                     </section>
                     <section class="item-filter">
-                        <h5>
+                        <h5 (click)="isActiveMaterial = !isActiveMaterial">
                             Material
                         </h5>
-                        <div class="body-filters active">
+                        <div class="body-filters"  [ngClass]="{ 'active': isActiveMaterial }">
                             <ul class="ul-filter">
                                 <li *ngFor="let material of listMateriales.response">
                                     <span>
@@ -139,7 +139,9 @@
                             <ul class="in-grid">
                                 <li><span>{{modelo.marca.nombre}}</span></li>
                                 <li><span>S/ {{modelo.precio}}</span></li>
-                                <li><button>Agregar</button></li>
+                                <li>
+                                    <a [routerLink]="['/producto/info', modelo.id]">Informacion</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
