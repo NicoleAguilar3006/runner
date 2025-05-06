@@ -41,4 +41,8 @@ export class ModeloService {
   public listarPorIdMarca(idMrc: number): Observable<Success> {
     return this.http.get<Success>(`${this.urlBase}/marca/${idMrc}`);
   }
+
+  public listProductoByModelo(id: string): Observable<Success> {
+    return this.http.get<Success>(`${this.urlBase}/productos-modelo/${id}`);
+  }
 }

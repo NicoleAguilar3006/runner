@@ -7,7 +7,7 @@ import { Marca } from '../../../models/marca/marca';
 
 @Component({
   selector: 'app-list-marca',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './list-marca.component.html',
   styleUrl: './list-marca.component.css'
 })

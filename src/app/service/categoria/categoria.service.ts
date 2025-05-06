@@ -17,7 +17,19 @@ export class CategoriaService {
     return this.http.get<Success>(this.urlBase);
   }
 
+  public findById(id : string): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + "/" + id);
+  }
+
   public add(categoria: Categoria): Observable<Success> {
     return this.http.post<Success>(this.urlBase, categoria);
+  }
+
+  public edit(categoria: Categoria, id: number): Observable<Success> {
+    return this.http.put<Success>(this.urlBase + "/" + id, categoria);
+  }
+
+  public delete(id: string): Observable<Success> {
+    return this.http.delete<Success>(this.urlBase + "/" + id);
   }
 }

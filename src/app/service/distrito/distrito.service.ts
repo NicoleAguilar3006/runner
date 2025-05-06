@@ -18,7 +18,19 @@ export class DistritoService {
     return this.http.get<Success>(this.urlBase);
   }
 
-  add(distrito: Distrito): Observable<Success> {
+  public findById(id : string): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + "/" + id);
+  }
+  
+  public add(distrito: Distrito): Observable<Success> {
     return this.http.post<Success>(this.urlBase, distrito);
+  }
+  
+  public edit(distrito: Distrito, id: number): Observable<Success> {
+    return this.http.post<Success>(this.urlBase + "/" + id, distrito);
+  }
+  
+  public delete(id: number): Observable<Success> {
+    return this.http.delete<Success>(this.urlBase + "/" + id);
   }
 }
