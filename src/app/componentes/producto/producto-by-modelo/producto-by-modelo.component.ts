@@ -25,7 +25,7 @@ export class ProductoByModeloComponent {
   };
 
   modelo = crearModelo();
-  id: number = 0;
+  idPrd: number = 0;
   mensaje: string = '';
   isConfirmed: boolean = false;
   isError: boolean = false;
@@ -77,7 +77,7 @@ export class ProductoByModeloComponent {
 
   deleteProducto(): void {
     this.isConfirmed = false;
-    this.productoService.delete(this.idPrd+"").subscribe(
+    this.productoService.delete(this.idPrd).subscribe(
       data => {
         console.log(data)
         this.mensaje = data.response;
