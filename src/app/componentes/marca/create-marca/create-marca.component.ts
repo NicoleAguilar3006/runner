@@ -16,7 +16,7 @@ export class CreateMarcaComponent {
   form: FormGroup;
 
   
-  titulo: string = 'Registrar marca '; 
+  titulo: string = 'Marca '; 
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;

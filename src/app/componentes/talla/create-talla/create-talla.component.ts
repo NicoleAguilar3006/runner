@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class CreateTallaComponent {
   form: FormGroup;
   
-  titulo: string = '¿Cuál es tu talla?';
+  titulo: string = 'Talla';
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;

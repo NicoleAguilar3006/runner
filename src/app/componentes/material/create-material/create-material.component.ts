@@ -16,7 +16,7 @@ export class CreateMaterialComponent {
   form: FormGroup;
 
 
-  titulo: string = 'Registrar material';
+  titulo: string = 'Material';
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;

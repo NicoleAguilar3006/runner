@@ -16,7 +16,7 @@ export class CreateDistritoComponent {
   form: FormGroup;
 
   
-  titulo: string = '¿Cuál es tu distrito?'; 
+  titulo: string = 'Distrito'; 
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;

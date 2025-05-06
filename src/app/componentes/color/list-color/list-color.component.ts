@@ -44,7 +44,7 @@ export class ListColorComponent {
     this.colorService.findAll().subscribe(
       data => {
         this.listColor = data.response;
-        this.titulo = 'Listado de categorias';
+        this.titulo = 'Listado de colores';
         this.cargoLista = true;
       }
     )
@@ -54,7 +54,7 @@ export class ListColorComponent {
     this.isConfirmed = false;
     this.colorService.delete(this.idClr).subscribe(
       data => {
-        this.titulo = 'Listado de categorias';
+        this.titulo = 'Listado de colores';
         this.mensaje = data.response;
         this.isSuccessful = true
         this.findAllColor()
@@ -70,7 +70,7 @@ export class ListColorComponent {
   }
 
   requiresConfirmation(isConfirmed: boolean) {
-    this.mensaje = '¿Estas seguro de que lo quieres eliminar?';
+    this.mensaje = '¿Estás seguro de que deseas eliminar este color?';
     this.isConfirmed = isConfirmed;
   }
 }

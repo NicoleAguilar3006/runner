@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { CategoriaService } from '../../../service/categoria/categoria.service';
 import { Color } from '../../../models/color/color';
 import { ColorService } from '../../../service/color/color.service';
 
@@ -82,13 +81,13 @@ export class EditColorComponent {
         e => {
           this.isError = true;
           this.mensaje = e.error.message;
-          console.error('Error al registrar la categoria:', e.error.message);
+          console.error('Error al registrar el color:', e.error.message);
         }
       );
   }
 
   requiresConfirmation(isConfirmed: boolean) {
-    this.mensaje = '¿Estas seguro de lo que vas a hacer?';
+    this.mensaje = '¿Estás seguro de que quieres actualizar?';
     this.isConfirmed = isConfirmed;
   }
 
