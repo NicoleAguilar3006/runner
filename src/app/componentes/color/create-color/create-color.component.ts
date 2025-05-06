@@ -1,14 +1,14 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CategoriaService } from '../../../service/categoria/categoria.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Color } from '../../../models/color/color';
 import { ColorService } from '../../../service/color/color.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-color',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterLink],
   templateUrl: './create-color.component.html',
   styleUrl: './create-color.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -43,11 +43,11 @@ export class CreateColorComponent {
       subscribe(response => {
 
         this.isSuccessful = true
-
-        this.mensaje = 'Categoria registrada con éxito';
+        this.mensaje = 'Color registrado con éxito'; 
+        
 
         setTimeout(() => {
-          this.router.navigate(['/categoria/list']);
+          this.router.navigate(['/color/list']);
         }, 3000);
       },
         e => {

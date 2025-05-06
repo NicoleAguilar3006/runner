@@ -19,8 +19,11 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class CreateCategoriaComponent {
   form: FormGroup;
-  mensajeConfirmacion: string = '';
-  isConfirmed: boolean = false;
+  
+
+  mensaje: string = '';
+  isError: boolean = false;
+  isSuccessful: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -34,24 +37,27 @@ export class CreateCategoriaComponent {
 
   registrarCategoria() {
     if (this.form.invalid) return;
-
+    
     const dato: Categoria = {
-      id: 0,
-      nombre: this.form.value.nombre
+      id : 0,
+      nombre : this.form.value.nombre
     }
 
     this.categoriaService.add(dato).
       subscribe(response => {
-        this.mensajeConfirmacion = 'Categoria registrada con éxito';
-        this.router.navigate(['/categoria/list']);
+        this.isSuccessful = true
+        this.mensaje = 'Categoría registrada con éxito'; 
+        
+        setTimeout(() => {
+          this.router.navigate(['/categoria/list']);
+        }, 3000);
       },
-        error => {
-          console.error('Error al registrar la categoria:', error);
+        e => {
+          this.isError = true;
+          this.mensaje = e.error.message;
         }
       );
   }
 
-  requiresConfirmation(isConfirmed: boolean) {
-    this.isConfirmed = isConfirmed;
-  }
+  
 }

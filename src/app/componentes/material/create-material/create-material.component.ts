@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MaterialService } from '../../../service/material/material.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Material } from '../../../models/material/material';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-material',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterLink],
   templateUrl: './create-material.component.html',
-  styleUrl: './create-material.component.css'
+  styleUrl: './create-material.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CreateMaterialComponent {
   form: FormGroup;
-  mensajeConfirmacion: string = '';
+
+  mensaje: string = '';
+  isError: boolean = false;
+  isSuccessful: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -31,19 +35,21 @@ export class CreateMaterialComponent {
     const dato: Material = {
       id: 0,
       nombre: this.form.value.nombre
-    };
+    }
 
-    this.materialService.add(dato).subscribe(
-      response => {
-        this.mensajeConfirmacion = 'Material registrado con éxito';
+    this.materialService.add(dato).
+      subscribe(response => {
+        this.isSuccessful = true
+        this.mensaje = 'Material registrado con éxito';
 
         setTimeout(() => {
-          this.router.navigate(['/listadoMateriales']);
+          this.router.navigate(['/material/list']);
         }, 3000);
       },
-      error => {
-        console.error('Error al registrar el material:', error);
-      }
-    );
+        e => {
+          this.isError = true;
+          this.mensaje = e.error.message;
+        }
+      );
   }
 }

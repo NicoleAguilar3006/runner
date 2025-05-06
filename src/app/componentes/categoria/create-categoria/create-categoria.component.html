@@ -14,35 +14,34 @@
                 </div>
 
                 <div class="cont-submit">
-                    <button (click)="requiresConfirmation(true)" type="button">Agregar</button>
 
-                    <a routerLink="/categoria/list">
+                    <button >Agregar</button>
+                    <a routerLink="/admin">
                         Volver a la lista
                     </a>
                 </div>
+                <div class="container-z" *ngIf="isError || isSuccessful">
 
-
-                <div class="container-z" *ngIf="isConfirmed">
                     <div class="md-confirmation in-grid">
                         <div class="md-header in-flex">
-                            <animated-icons
-                                src="https://animatedicons.co/get-icon?name=plus&style=minimalistic&token=3a3309ff-41ae-42ce-97d0-5767a4421b43"
-                                trigger="loop"
-                                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":2.1,"defaultColours":{"group-1":"#5E5E5EFF","group-2":"#5E5E5EFF","background":"#FFFFFF00"}}'
+                            <animated-icons *ngIf="isError"
+                                src="https://animatedicons.co/get-icon?name=Alert&style=minimalistic&token=4ff92fe8-3f2e-471b-beff-2c28789b1813"
+                                trigger="loop-on-hover"
+                                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":2.1,"defaultColours":{"group-1":"#AD0000FF","group-2":"#AD0000FF","background":"#FFFFFF00"}}'
                                 height="60" width="60"></animated-icons>
-                                
-                            <h2>¿Estas seguro de lo que vas a hacer?</h2>
-                        </div>
-                        <!--
-                        <div class="md-body">
+                            <animated-icons
+                                *ngIf="isSuccessful"
+                                src="https://animatedicons.co/get-icon?name=Success&style=minimalistic&token=2cb0da6b-0dad-4d02-8599-79b76c0333fb"
+                                trigger="loop-on-hover"
+                                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":2.1,"defaultColours":{"group-1":"#00AD00FF","group-2":"#00AD00FF","background":"#FFFFFF00"}}'
+                                height="60" width="60"></animated-icons>
+
+                            <h2>{{mensaje}}</h2>
 
                         </div>
-                        -->
-                        <div class="md-footer in-flex">
-                            <button class="md-aceptar" type="submit">
-                                Aceptar
-                            </button>
-                            <button class="md-cancelar" type="button" (click)="requiresConfirmation(false)">
+
+                        <div class="md-footer in-flex" *ngIf="isError">
+                            <button class="md-cancelar" (click)="isError = false">
                                 Cancelar
                             </button>
                         </div>
