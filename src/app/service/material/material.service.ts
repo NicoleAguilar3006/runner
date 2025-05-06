@@ -12,11 +12,23 @@ export class MaterialService {
 
   constructor(private http: HttpClient) { }
 
-  findAll(): Observable<Success> {
+  public findAll(): Observable<Success> {
     return this.http.get<Success>(this.urlBase);
   }
 
-    public add(material: Material): Observable<Success> {
-      return this.http.post<Success>(this.urlBase, material);
-    }
+  public findById(id : string): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + "/" + id);
+  }
+  
+  public add(material: Material): Observable<Success> {
+    return this.http.post<Success>(this.urlBase, material);
+  }
+
+  public edit(material: Material, id: number): Observable<Success> {
+    return this.http.put<Success>(this.urlBase + "/" + id, material);
+  }
+  
+  public delete(id: number): Observable<Success> {
+    return this.http.delete<Success>(this.urlBase + "/" + id);
+  }
 }

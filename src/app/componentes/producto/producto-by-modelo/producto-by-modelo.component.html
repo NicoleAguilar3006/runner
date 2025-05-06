@@ -1,0 +1,43 @@
+<div class="container">
+    <div id="cont-product" class="in-grid">
+        <section class="in-flex">
+            <div class="pr-header">
+                <span>{{modelo.categoria.nombre}}</span>
+                <h2>{{modelo.descripcion}}</h2>
+            </div>
+            <ul class="pr-body">
+                <li>
+                    Material: {{modelo.material.nombre}}
+                </li>
+                <li>
+                    Marca: {{modelo.marca.nombre}}
+                </li>
+                <li>
+                    Genero: {{modelo.persona.nombre}}
+                </li>
+                <li>
+                    Informacion: {{modelo.info}}
+                </li>
+            </ul>
+            <div id="pr-price" class="in-flex">
+                    <span>Precio</span>
+                    <span>S/ {{modelo.precio}}</span>
+            </div>
+            <div id="pr-footer">
+                <section>
+                    <button type="submit" id="btn-add_car">
+                        <span>Actualizar el modelo</span>
+                    </button>
+                    <button type="submit" id="btn-add_favorite">
+                        <span>Agragar a favoritos</span>
+                    </button>
+                </section>
+            </div>
+        </section>
+        <section class="nav-prts">
+            <div class="item" *ngFor="let producto of modelo.productos">
+                {{producto.idClr}}
+            </div>
+        </section>
+    </div>
+</div>

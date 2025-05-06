@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TallaService } from '../../../service/talla/talla.service';
 import { Talla } from '../../../models/talla/talla';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-talla',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterLink],
   templateUrl: './create-talla.component.html',
-  styleUrl: './create-talla.component.css'
+  styleUrl: './create-talla.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CreateTallaComponent {
   form: FormGroup;
-  mensajeConfirmacion: string = '';
+  
   titulo: string = '¿Cuál es tu talla?';
+  mensaje: string = '';
+  isError: boolean = false;
+  isSuccessful: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -32,19 +36,21 @@ export class CreateTallaComponent {
     const dato: Talla = {
       id: 0,
       nombre: this.form.value.nombre
-    };
+    }
 
-    this.tallaService.add(dato).subscribe(
-      response => {
-        this.mensajeConfirmacion = 'Talla registrada con éxito';
+    this.tallaService.add(dato).
+      subscribe(response => {
+        this.isSuccessful = true
+        this.mensaje = 'Talla registrada con éxito';
 
         setTimeout(() => {
-          this.router.navigate(['/listadoTallas']);
+          this.router.navigate(['/talla/list']);
         }, 3000);
       },
-      error => {
-        console.error('Error al registrar la talla:', error);
-      }
-    );
+        e => {
+          this.isError = true;
+          this.mensaje = e.error.message;
+        }
+      );
   }
 }

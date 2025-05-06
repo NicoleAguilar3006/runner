@@ -1,0 +1,67 @@
+.container {
+    background-color: rgb(255, 255, 255);
+}
+
+#cont-product {
+    padding: 40px 0 10px;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: 2fr 6fr;
+}
+
+#cont-product > section {
+    width: 100%;
+    padding: 10px;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.pr-header h2{
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+.pr-body li {
+    margin: 4px 0;
+    font-size: 1em;
+}
+
+#pr-footer{
+    margin-top: 10px;
+}
+
+#btn-add_car, #btn-add_favorite{
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+#btn-add_car{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+#btn-add_car span, #btn-add_favorite span{
+    font-size: 1.2em;
+}
+
+#btn-add_favorite{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
+
+#pr-price{
+    justify-content: space-between;
+}
+
+#pr-price span{
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+}
+
+.nav-prts{
+    max-height: 500px;
+    overflow-y: scroll;
+}

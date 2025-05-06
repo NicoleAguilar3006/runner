@@ -3,7 +3,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Categoria } from '../../../models/categoria/categoria';
 import { CategoriaService } from '../../../service/categoria/categoria.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-create-categoria',
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
+    RouterLink
   ],
   templateUrl: './create-categoria.component.html',
   styleUrl: './create-categoria.component.css',
@@ -18,9 +19,12 @@ import { Router } from '@angular/router';
 })
 export class CreateCategoriaComponent {
   form: FormGroup;
-  mensajeConfirmacion: string = '';
-  isConfirmed: boolean = false;
   titulo: string = 'Categoría';
+  mensaje: string = '';
+  isConfirmed: boolean = false;
+  isError: boolean = false;
+  isSuccessful: boolean = false;
+
 
   constructor(
     private fb: FormBuilder,
@@ -34,30 +38,26 @@ export class CreateCategoriaComponent {
 
   registrarCategoria() {
     if (this.form.invalid) return;
-
+    
     const dato: Categoria = {
-      id: 0,
-      nombre: this.form.value.nombre
-    };
+      id : 0,
+      nombre : this.form.value.nombre
+    }
 
-    this.categoriaService.add(dato).subscribe(
-      response => {
-        this.mensajeConfirmacion = 'Categoría registrada con éxito';
+    this.categoriaService.add(dato).
+      subscribe(response => {
+        this.isSuccessful = true
+        this.mensaje = 'Categoría registrada con éxito'; 
         
-        // Redirigir automáticamente a la lista de categorías después de la creación
-        this.router.navigate(['/categoria/list']);
+        setTimeout(() => {
+          this.router.navigate(['/categoria/list']);
+        }, 3000);
       },
-      error => {
-        console.error('Error al registrar la categoría:', error);
-      }
-    );
+        e => {
+          this.isError = true;
+          this.mensaje = e.error.message;
+        }
+      );
   }
 
-  requiresConfirmation(isConfirmed: boolean) {
-    this.isConfirmed = isConfirmed;
-  }
-
-  volverALaLista() {
-    this.router.navigate(['/categoria/list']);
-  }
 }

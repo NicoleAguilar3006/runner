@@ -17,7 +17,19 @@ export class MarcaService {
     return this.http.get<Success>(this.urlBase);
   }
 
+  public findById(id : string): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + "/" + id);
+  }
+  
   public add(marca: Marca): Observable<Success> {
     return this.http.post<Success>(this.urlBase, marca);
+  }
+
+  public edit(marca: Marca, id: number): Observable<Success> {
+    return this.http.put<Success>(this.urlBase + "/" + id, marca);
+  }
+  
+  public delete(id: number): Observable<Success> {
+    return this.http.delete<Success>(this.urlBase + "/" + id);
   }
 }
