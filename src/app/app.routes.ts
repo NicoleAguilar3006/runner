@@ -56,6 +56,7 @@ export const routes: Routes = [
     { path: 'producto/info/:id', component: ProductoByModeloComponent},
     { path: 'producto/edit/:id', component: EditProductoComponent},
     { path: 'producto/create', component: CreateProductoComponent},
+    { path: 'producto/list', component: FiltrarComponent},
 
     { path: 'categoria/list', component: ListCategoriaComponent},
     { path: 'categoria/edit/:id', component: EditCategoriaComponent},
@@ -120,7 +121,7 @@ export const routes: Routes = [
         path: 'admin',
         component: AdminComponent,
         canActivate: [roleGuard],
-        data: { expectedRole: 'USER' }
+        data: { expectedRole: 'ADMIN' }
     },
     {
         path: 'usuario',
