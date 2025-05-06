@@ -75,4 +75,18 @@ export class AccountService {
     }
   }
 
+  getUserRole(): string | null {
+    const user = localStorage.getItem('user');
+    console.log(user)
+    if (user) {
+      const userData = JSON.parse(user);
+      return userData.rol;
+    }
+    return null;
+  }
+  
+  isAdmin(): boolean {
+    return this.getUserRole() === 'ADMIN';
+  }
+
 }

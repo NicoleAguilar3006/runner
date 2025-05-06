@@ -14,6 +14,7 @@ export class HeaderComponent {
   router = inject(Router);
   isLogged: boolean = false;
   loaded: boolean = false;
+  isAdminUser: boolean = false;
 
   constructor(
     private accountService: AccountService
@@ -26,6 +27,8 @@ export class HeaderComponent {
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
       this.accountService.isLoggedIn();
+      this.isAdminUser = this.accountService.isAdmin();
+      console.log(this.isAdminUser)
       this.loaded = true;
     }
   }
