@@ -15,11 +15,15 @@ export class ColorService {
     return this.http.get<Success>(this.urlBase);
   }
 
+  public findById(id : string): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + "/" + id);
+  }
+
   public add(color: Color): Observable<Success> {
     return this.http.post<Success>(this.urlBase, color);
   }
 
-  public edit(color: Color, id: number): Observable<Success> {
+  public edit(color: Color, id: string): Observable<Success> {
     return this.http.put<Success>(this.urlBase + "/" + id, color);
   }
   

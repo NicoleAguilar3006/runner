@@ -16,6 +16,10 @@ export class TallaService {
     return this.http.get<Success>(this.urlBase);
   }
 
+  public findById(id : string): Observable<Success> {
+    return this.http.get<Success>(this.urlBase + "/" + id);
+  }
+
   public add(talla: Talla): Observable<Success> {
     return this.http.post<Success>(this.urlBase, talla);
   }
