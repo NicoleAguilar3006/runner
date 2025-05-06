@@ -33,6 +33,13 @@ import { CreateTallaComponent } from './componentes/talla/create-talla/create-ta
 import { ListCategoriaComponent } from './componentes/categoria/list-categoria/list-categoria.component';
 import { CreateCategoriaComponent } from './componentes/categoria/create-categoria/create-categoria.component';
 import { RegistrarModelosComponent } from './componentes/modelo/registrar-modelo/registrar-modelo.component';
+import { EditCategoriaComponent } from './componentes/categoria/edit-categoria/edit-categoria.component';
+import { EditColorComponent } from './componentes/color/edit-color/edit-color.component';
+import { EditDistritoComponent } from './componentes/distrito/edit-distrito/edit-distrito.component';
+import { EditMarcaComponent } from './componentes/marca/edit-marca/edit-marca.component';
+import { EditMaterialComponent } from './componentes/material/edit-material/edit-material.component';
+import { EditPersonaComponent } from './componentes/persona/edit-persona/edit-persona.component';
+import { EditTallaComponent } from './componentes/talla/edit-talla/edit-talla.component';
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent },
@@ -41,23 +48,23 @@ export const routes: Routes = [
     { path: 'modelo/create', component: CreateModeloComponent},
 
     { path: 'categoria/list', component: ListCategoriaComponent},
-    { path: 'categoria/edit', component: ListarProductosComponent},
+    { path: 'categoria/edit/:id', component: EditCategoriaComponent},
     { path: 'categoria/create', component: CreateCategoriaComponent},
 
     { path: 'color/list', component: ListColorComponent},
-    { path: 'color/edit', component: ListarProductosComponent},
+    { path: 'color/edit/:id', component: EditColorComponent},
     { path: 'color/create', component: CreateColorComponent},
 
     { path: 'distrito/list', component: ListDistritoComponent},
-    { path: 'distrito/edit', component: ListarProductosComponent},
+    { path: 'distrito/edit/:id', component: EditDistritoComponent},
     { path: 'distrito/create', component: CreateDistritoComponent},
 
     { path: 'marca/list', component: ListMarcaComponent},
-    { path: 'marca/edit', component: ListarProductosComponent},
+    { path: 'marca/edit/:id', component: EditMarcaComponent},
     { path: 'marca/create', component: CreateMarcaComponent},
 
     { path: 'material/list', component: ListMaterialComponent},
-    { path: 'material/edit', component: ListarProductosComponent},
+    { path: 'material/edit/:id', component: EditMaterialComponent},
     { path: 'material/create', component: CreateMaterialComponent},
 
     { path: 'modelo/list', component: ListModeloComponent},
@@ -65,15 +72,15 @@ export const routes: Routes = [
     { path: 'modelo/create', component: CreateModeloComponent},
 
     { path: 'persona/list', component: ListPersonaComponent},
-    { path: 'persona/edit', component: ListarProductosComponent},
+    { path: 'persona/edit/:id', component: EditPersonaComponent},
     { path: 'persona/create', component: CreatePersonaComponent},
 
     { path: 'talla/list', component: ListTallaComponent},
-    { path: 'talla/edit', component: ListarProductosComponent},
+    { path: 'talla/edit/:id', component: EditTallaComponent},
     { path: 'talla/create', component: CreateTallaComponent},
 
     { path: 'ticket/list', component: ListTicketComponent},
-    { path: 'ticket/edit', component: ListarProductosComponent},
+    { path: 'ticket/edit/:id', component: EditTallaComponent},
     { path: 'ticket/create', component: CreateTicketComponent},
 
     { path: 'transaccion/lista', component: ListarProductosComponent},
