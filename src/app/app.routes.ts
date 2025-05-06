@@ -49,54 +49,182 @@ export const routes: Routes = [
     { path: '', component: PrincipalComponent },
     { path: 'filtros', component: FiltrarComponent},
     
-    { path: 'modelo/create', component: CreateModeloComponent},
-    { path: 'modelo/edit/:id', component: EditModeloComponent},
-    { path: 'modelo/list', component: FiltroModeloComponent},
+    { path: 'modelo/create', 
+        component: CreateModeloComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'modelo/edit/:id', 
+        component: EditModeloComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'modelo/list', 
+        component: FiltroModeloComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
     
-    { path: 'producto/info/:id', component: ProductoByModeloComponent},
-    { path: 'producto/edit/:id', component: EditProductoComponent},
-    { path: 'producto/create', component: CreateProductoComponent},
+    { path: 'producto/info/:id', 
+        component: ProductoByModeloComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'producto/edit/:id', 
+        component: EditProductoComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'producto/create', 
+        component: CreateProductoComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
     { path: 'producto/list', component: FiltrarComponent},
 
-    { path: 'categoria/list', component: ListCategoriaComponent},
-    { path: 'categoria/edit/:id', component: EditCategoriaComponent},
-    { path: 'categoria/create', component: CreateCategoriaComponent},
+    { path: 'categoria/list', 
+        component: ListCategoriaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'categoria/edit/:id', 
+        component: EditCategoriaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'categoria/create', 
+        component: CreateCategoriaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'color/list', component: ListColorComponent},
-    { path: 'color/edit/:id', component: EditColorComponent},
-    { path: 'color/create', component: CreateColorComponent},
+    { path: 'color/list', 
+        component: ListColorComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'color/edit/:id', 
+        component: EditColorComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'color/create', 
+        component: CreateColorComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'distrito/list', component: ListDistritoComponent},
-    { path: 'distrito/edit/:id', component: EditDistritoComponent},
-    { path: 'distrito/create', component: CreateDistritoComponent},
+    { path: 'distrito/list', 
+        component: ListDistritoComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'distrito/edit/:id', 
+        component: EditDistritoComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'distrito/create', 
+        component: CreateDistritoComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'marca/list', component: ListMarcaComponent},
-    { path: 'marca/edit/:id', component: EditMarcaComponent},
-    { path: 'marca/create', component: CreateMarcaComponent},
+    { path: 'marca/list', 
+        component: ListMarcaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'marca/edit/:id', 
+        component: EditMarcaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'marca/create', 
+        component: CreateMarcaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'material/list', component: ListMaterialComponent},
-    { path: 'material/edit/:id', component: EditMaterialComponent},
-    { path: 'material/create', component: CreateMaterialComponent},
+    { path: 'material/list', 
+        component: ListMaterialComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'material/edit/:id', 
+        component: EditMaterialComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'material/create', 
+        component: CreateMaterialComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'modelo/list', component: ListModeloComponent},
-    { path: 'modelo/edit', component: ListarProductosComponent},
-    { path: 'modelo/create', component: CreateModeloComponent},
+    { path: 'modelo/list', 
+        component: ListModeloComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'modelo/edit', 
+        component: ListarProductosComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'modelo/create', 
+        component: CreateModeloComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'persona/list', component: ListPersonaComponent},
-    { path: 'persona/edit/:id', component: EditPersonaComponent},
-    { path: 'persona/create', component: CreatePersonaComponent},
+    { path: 'persona/list', 
+        component: ListPersonaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'persona/edit/:id', 
+        component: EditPersonaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'persona/create', 
+        component: CreatePersonaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'talla/list', component: ListTallaComponent},
-    { path: 'talla/edit/:id', component: EditTallaComponent},
-    { path: 'talla/create', component: CreateTallaComponent},
+    { path: 'talla/list', 
+        component: ListTallaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'talla/edit/:id', 
+        component: EditTallaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'talla/create', 
+        component: CreateTallaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
-    { path: 'ticket/list', component: ListTicketComponent},
-    { path: 'ticket/edit/:id', component: EditTallaComponent},
-    { path: 'ticket/create', component: CreateTicketComponent},
-
-    { path: 'transaccion/lista', component: ListarProductosComponent},
-
-
+    { path: 'ticket/list', 
+        component: ListTicketComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'ticket/edit/:id', 
+        component: EditTallaComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
+    { path: 'ticket/create', 
+        component: CreateTicketComponent,
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }
+    },
 
     { path: 'listadoModelos', component: ListarModelosComponent}, 
 
