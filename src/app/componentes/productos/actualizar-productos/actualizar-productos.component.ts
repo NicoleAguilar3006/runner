@@ -52,7 +52,7 @@ export class ActualizarProductosComponent {
     // Obtener el ID del producto desde la URL
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.productoService.buscar(id).subscribe(
+      this.productoService.findById(id).subscribe(
         (response) => {
           // Asignamos los datos del producto cargado a la propiedad `producto`
           this.producto = response.response;  // Aquí el `response` debería ser el producto con los valores correctos
@@ -98,7 +98,7 @@ export class ActualizarProductosComponent {
   }
 
   actualizarProducto(): void {
-    this.productoService.actualizar(this.producto.id.toString(), this.producto).subscribe(
+    this.productoService.edit(this.producto.id.toString(), this.producto).subscribe(
       (response) => {
         this.mensajeConfirmacion = 'Producto actualizado con éxito'; 
         console.log(response);

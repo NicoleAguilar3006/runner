@@ -26,15 +26,15 @@ export class ProductoService {
     return this.http.post<Success>(this.urlBase, producto);
   }
 
-  public buscar(id: string): Observable<Success> {
+  public findById(id: string): Observable<Success> {
     return this.http.get<Success>(this.urlBase + `/${id}`);
   }
 
-  public actualizar(id: string, producto: ProductoRegistrar): Observable<Success> {
+  public edit(id: string, producto: ProductoRegistrar): Observable<Success> {
     return this.http.put<Success>(this.urlBase + `/${id}`, producto);
   }
 
-  public eliminar(id: string): Observable<Success> {
+  public delete(id: string): Observable<Success> {
     return this.http.delete<Success>(this.urlBase + `/${id}`);
   }
 

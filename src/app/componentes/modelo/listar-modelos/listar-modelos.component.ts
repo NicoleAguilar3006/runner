@@ -93,7 +93,7 @@ export class ListarModelosComponent {
 
   eliminarModelo(id:string): void {
     if (confirm('¿Estás seguro de que quieres eliminar este modelo?')) {
-    this.modeloService.eliminar(id).subscribe(
+    this.modeloService.delete(id).subscribe(
       (response) => {
         this.mensajeConfirmacion = 'Producto eliminado con éxito'; 
         console.log(response);

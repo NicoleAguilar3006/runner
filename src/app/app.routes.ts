@@ -41,15 +41,18 @@ import { EditMaterialComponent } from './componentes/material/edit-material/edit
 import { EditPersonaComponent } from './componentes/persona/edit-persona/edit-persona.component';
 import { EditTallaComponent } from './componentes/talla/edit-talla/edit-talla.component';
 import { ProductoByModeloComponent } from './componentes/producto/producto-by-modelo/producto-by-modelo.component';
+import { EditModeloComponent } from './componentes/modelo/edit-modelo/edit-modelo.component';
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent },
     { path: 'filtros', component: FiltrarComponent},
     
     { path: 'modelo/create', component: CreateModeloComponent},
+    { path: 'modelo/edit/:id', component: EditModeloComponent},
     { path: 'modelo/list', component: FiltroModeloComponent},
     
     { path: 'producto/info/:id', component: ProductoByModeloComponent},
+    { path: 'producto/edit/:id', component: ProductoByModeloComponent},
 
     { path: 'categoria/list', component: ListCategoriaComponent},
     { path: 'categoria/edit/:id', component: EditCategoriaComponent},

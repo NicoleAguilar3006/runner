@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModeloService } from '../../../service/modelo/modelo.service';
 import { Success } from '../../../models/success/success';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Modelo } from '../../../models/modelo/modelo';
 import { Producto } from '../../../models/producto/producto';
 import { ProductoDTO } from '../../../models/producto/producto-dto';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-producto-by-modelo',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './producto-by-modelo.component.html',
   styleUrl: './producto-by-modelo.component.css'
 })

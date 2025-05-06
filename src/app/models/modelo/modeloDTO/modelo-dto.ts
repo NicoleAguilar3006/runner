@@ -1,4 +1,5 @@
 export interface ModeloDTO {
+    id: number;
     descripcion: string;
     info: string;
     precio: number;

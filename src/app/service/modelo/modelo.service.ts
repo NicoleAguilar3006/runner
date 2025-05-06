@@ -25,16 +25,16 @@ export class ModeloService {
     return this.http.post<Success>(this.urlBase, modelo);
   }
 
-  public buscar(id: string): Observable<Success> {
+  public findById(id: string): Observable<Success> {
     return this.http.get<Success>(this.urlBase + `/${id}`);
   }
 
 
-  public actualizarModelo(id: number, modelo: ModeloRegistrar): Observable<Success> {
+  public edit(modelo: ModeloRegistrar, id: number): Observable<Success> {
     return this.http.put<Success>(this.urlBase + `/${id}`, modelo);
   }
 
-  public eliminar(id: string): Observable<Success> {
+  public delete(id: string): Observable<Success> {
     return this.http.delete<Success>(this.urlBase + `/${id}`);
   }
 

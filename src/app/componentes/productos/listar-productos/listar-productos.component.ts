@@ -99,7 +99,7 @@ export class ListarProductosComponent {
 
   eliminarProducto(id:string): void {
     if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-    this.productoService.eliminar(id).subscribe(
+    this.productoService.delete(id).subscribe(
       (response) => {
         this.mensajeConfirmacion = 'Producto eliminado con éxito'; 
         console.log(response);

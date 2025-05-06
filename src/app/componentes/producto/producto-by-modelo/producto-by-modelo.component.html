@@ -1,6 +1,6 @@
 <div class="container">
     <div id="cont-product" class="in-grid">
-        <section class="in-flex">
+        <section class="cmp-prd in-flex">
             <div class="pr-header">
                 <span>{{modelo.categoria.nombre}}</span>
                 <h2>{{modelo.descripcion}}</h2>
@@ -20,24 +20,44 @@
                 </li>
             </ul>
             <div id="pr-price" class="in-flex">
-                    <span>Precio</span>
-                    <span>S/ {{modelo.precio}}</span>
+                <span>Precio</span>
+                <span>S/ {{modelo.precio}}</span>
             </div>
             <div id="pr-footer">
                 <section>
-                    <button type="submit" id="btn-add_car">
+                    <a id="btn-add_car" [routerLink]="['/modelo/edit', modelo.id]">
                         <span>Actualizar el modelo</span>
-                    </button>
-                    <button type="submit" id="btn-add_favorite">
-                        <span>Agragar a favoritos</span>
-                    </button>
+                    </a>
                 </section>
             </div>
         </section>
-        <section class="nav-prts">
-            <div class="item" *ngFor="let producto of modelo.productos">
-                {{producto.idClr}}
+        <section class="nav-prts in-grid">
+            <div class="prd-crt" *ngFor="let producto of modelo.productos">
+                <section class="cart in-grid">
+                    <div class="crt-head">
+                        <a class="btn btn-green" [routerLink]="['/producto/edit', producto.id]">
+                            <svg>
+                                <use href="./icons/icon.svg#edit-icon"></use>
+                            </svg>
+                        </a>
+                        <button class="btn btn-red">
+                            <svg>
+                                <use href="./icons/icon.svg#trash-icon"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="crt-body in-grid">
+                        <li>ID</li>
+                        <li>{{producto.id}}</li>
+                        <li>COLOR</li>
+                        <li>{{producto.color.nombre}}</li>
+                        <li>TALLA</li>
+                        <li>{{producto.talla.nombre}}</li>
+                        <li>STOCK</li>
+                        <li>{{producto.stock}}</li>
+                    </ul>
+                </section>
             </div>
         </section>
     </div>
-</div>
+</div>  
