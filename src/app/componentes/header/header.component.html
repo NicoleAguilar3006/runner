@@ -29,11 +29,12 @@
       <li class="header-item">
         <div class="header-car">
           <div class="header-btn_car in-flex">
-            <label for="checkbox-car" class="lbl-header">
+            <a routerLink="/admin" class="header-btn_user in-flex" *ngIf="isAdminUser">
               <svg>
-                <use href="./icons/icon.svg#car-icon"></use>
+                <use href="./icons/icon.svg#user-icon"></use>
               </svg>
-            </label>
+              <span>Panel Admin</span>
+            </a>
           </div>
         </div>
       </li>
