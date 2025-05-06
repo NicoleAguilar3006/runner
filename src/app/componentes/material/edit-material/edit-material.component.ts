@@ -71,7 +71,7 @@ export class EditMaterialComponent {
       this.materialService.edit(dato, this.material.id).
         subscribe(response => {
   
-          this.mensaje = 'Material actualizada con éxito';
+          this.mensaje = 'Material actualizado con éxito';
           this.isSuccessful = true
   
           setTimeout(() => {

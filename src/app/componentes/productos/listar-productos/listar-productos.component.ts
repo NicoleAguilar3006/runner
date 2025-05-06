@@ -97,7 +97,7 @@ export class ListarProductosComponent {
     });
   }
 
-  eliminarProducto(id:string): void {
+  eliminarProducto(id:number): void {
     if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
     this.productoService.delete(id).subscribe(
       (response) => {
