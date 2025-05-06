@@ -6,7 +6,7 @@ import { CategoriaService } from '../../../service/categoria/categoria.service';
 
 @Component({
   selector: 'app-list-ticket',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './list-ticket.component.html',
   styleUrl: './list-ticket.component.css'
 })
