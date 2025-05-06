@@ -2,10 +2,16 @@ import { Component } from '@angular/core';
 import { ModeloService } from '../../../service/modelo/modelo.service';
 import { Success } from '../../../models/success/success';
 import { ActivatedRoute } from '@angular/router';
+import { Modelo } from '../../../models/modelo/modelo';
+import { Producto } from '../../../models/producto/producto';
+import { ProductoDTO } from '../../../models/producto/producto-dto';
+import { ModeloByProductos } from '../../../models/modelo/modelo-by-productos';
+import { crearModelo } from '../../../utils/factories';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-producto-by-modelo',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './producto-by-modelo.component.html',
   styleUrl: './producto-by-modelo.component.css'
 })
@@ -19,7 +25,25 @@ export class ProductoByModeloComponent {
     response: [],
   };
 
-  listModelo: Success = this.success;
+  modelo = crearModelo();
+
+  listProducto: ProductoDTO[] = [
+    {
+      id: 0,
+      stock: 0,
+      idClr: 0,
+      idTll: 0,
+      idMdl: 0,
+      color: {
+        id: 0,
+        nombre: ''
+      },
+      talla: {
+        id: 0,
+        nombre: ''
+      }
+    }
+  ]
 
   constructor(
     private route: ActivatedRoute,
@@ -32,7 +56,8 @@ export class ProductoByModeloComponent {
     if (id) {
       this.modeloService.listProductoByModelo(id).subscribe(
         response => {
-          console.log(response)
+          this.modelo = response.response
+          console.log("soy modelo ",this.modelo)
         },
         error => {
           console.error('Error al registrar la categoría:', error);
