@@ -14,7 +14,7 @@
                     </div>
                     <div class="item in-flex">
                         <input type="text" formControlName="info" id="info"/>
-                        <label for="info">Informacion</label>
+                        <label for="info">Información</label>
                     </div>
                     <div class="item in-flex">
                         <input type="text" formControlName="precio" id="precio"/>
@@ -26,30 +26,33 @@
                         <select id="distrito" class="form-select" formControlName="idCtg" required>
                           <option *ngFor="let categorias of listCategorias" [value]="categorias.id">{{ categorias.nombre }}</option>
                         </select>
-                        <label for="">Distrito</label>
+                        <label for="">Categoría</label>
                     </div>
                     <div class="item in-flex">
                         <select id="distrito" class="form-select" formControlName="idMrc" required>
                           <option *ngFor="let marcas of listMarcas" [value]="marcas.id">{{ marcas.nombre }}</option>
                         </select>
-                        <label for="">Distrito</label>
+                        <label for="">Marca</label>
                     </div>
                     <div class="item in-flex">
                         <select id="distrito" class="form-select" formControlName="idPrn" required>
                           <option *ngFor="let personas of listPersonas" [value]="personas.id">{{ personas.nombre }}</option>
                         </select>
-                        <label for="">Distrito</label>
+                        <label for="">Género</label>
                     </div>
                     <div class="item in-flex">
                         <select id="distrito" class="form-select" formControlName="idMtl" required>
                           <option *ngFor="let materiales of listMateriales" [value]="materiales.id">{{ materiales.nombre }}</option>
                         </select>
-                        <label for="">Distrito</label>
+                        <label for="">Material</label>
                     </div>
                 </div>
 
                 <div class="cont-submit">
-                    <input id="inp-login" type="submit" value="Registrar" />
+                    <button inp-login type="button">Agregar</button>
+                    <a routerLink="/admin">
+                        Volver a la lista
+                    </a>
                 </div>
             </form>
         </div>

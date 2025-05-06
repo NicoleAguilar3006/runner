@@ -18,14 +18,14 @@
                             <option *ngFor="let color of listColor" [value]="color.id">{{
                                 color.nombre }}</option>
                         </select>
-                        <label for="">Distrito</label>
+                        <label for="">Color</label>
                     </div>
                     <div class="item in-flex">
                         <select id="distrito" class="form-select" formControlName="idMdl" [(ngModel)]="producto.idMdl"
                             required>
                             <option *ngFor="let modelo of listModelos" [value]="modelo.id">{{ modelo.descripcion }}</option>
                         </select>
-                        <label for="">Distrito</label>
+                        <label for="">Modelo</label>
                     </div>
                     <div class="item in-flex">
                         <select id="distrito" class="form-select" formControlName="idTll" [(ngModel)]="producto.idTll"
@@ -33,7 +33,7 @@
                             <option *ngFor="let talla of listTallas" [value]="talla.id">{{ talla.nombre }}
                             </option>
                         </select>
-                        <label for="">Distrito</label>
+                        <label for="">Talla</label>
                     </div>
                 </div>
 
