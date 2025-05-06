@@ -14,10 +14,14 @@ import { CommonModule } from '@angular/common';
 })
 export class CreatePersonaComponent {
   form: FormGroup;
+
+  titulo: string = 'Género'; 
+
   
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;
+
 
   constructor(
     private fb: FormBuilder,

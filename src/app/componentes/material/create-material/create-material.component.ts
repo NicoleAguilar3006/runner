@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 export class CreateMaterialComponent {
   form: FormGroup;
 
+
+  titulo: string = 'Registrar material';
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;

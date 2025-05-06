@@ -23,6 +23,7 @@ import { ModeloDTO } from '../../../models/modelo/modeloDTO/modelo-dto';
 export class CreateModeloComponent {
   form: FormGroup;
   mensajeConfirmacion: string = '';
+  titulo: string = 'Nuevo modelo '; 
 
   listCategorias: Categoria[] = [];
   listMarcas: Marca[] = [];

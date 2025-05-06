@@ -14,10 +14,13 @@ import { CommonModule } from '@angular/common';
 })
 export class CreateMarcaComponent {
   form: FormGroup;
+
   
+  titulo: string = 'Registrar marca '; 
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;
+
 
   constructor(
     private fb: FormBuilder,

@@ -19,11 +19,12 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class CreateCategoriaComponent {
   form: FormGroup;
-  
-
+  titulo: string = 'Categoría';
   mensaje: string = '';
+  isConfirmed: boolean = false;
   isError: boolean = false;
   isSuccessful: boolean = false;
+
 
   constructor(
     private fb: FormBuilder,
@@ -59,5 +60,4 @@ export class CreateCategoriaComponent {
       );
   }
 
-  
 }

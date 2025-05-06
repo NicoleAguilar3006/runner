@@ -14,7 +14,9 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 })
 export class CreateDistritoComponent {
   form: FormGroup;
+
   
+  titulo: string = '¿Cuál es tu distrito?'; 
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;
