@@ -1,7 +1,7 @@
 <div class="in-flex" id="cont-login">
     <div class="cont-form">
         <div class="form-head">
-            <h2>Iniciar sesión</h2>
+            <h2>{{ titulo }}</h2>
         </div>
         <div class="form-body">
 
@@ -9,16 +9,17 @@
                 <div class="sn-form in-flex">
                     <div class="item in-flex">
                         <input type="text" formControlName="nombre" id="nombre" />
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre">Registra tu categoría</label>
                     </div>
                 </div>
 
                 <div class="cont-submit">
                     <button (click)="requiresConfirmation(true)">Agregar</button>
-                    <a routerLink="/modelo/list">
-                        Volver a la lista
-                    </a>
+                    <a (click)="volverALaLista()">Volver a la lista</a>
                 </div>
+
+
+                
                 <div class="container-z" *ngIf="isConfirmed">
                     <div class="md-confirmation in-grid">
                         <div class="md-header in-flex">

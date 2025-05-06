@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 export class CreateDistritoComponent {
   form: FormGroup;
   mensajeConfirmacion: string = '';
+  titulo: string = '¿Cuál es tu distrito?'; 
 
   constructor(
     private fb: FormBuilder, 

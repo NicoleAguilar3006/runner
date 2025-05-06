@@ -20,6 +20,7 @@ export class CreateCategoriaComponent {
   form: FormGroup;
   mensajeConfirmacion: string = '';
   isConfirmed: boolean = false;
+  titulo: string = 'Categoría';
 
   constructor(
     private fb: FormBuilder,
@@ -37,20 +38,26 @@ export class CreateCategoriaComponent {
     const dato: Categoria = {
       id: 0,
       nombre: this.form.value.nombre
-    }
+    };
 
-    this.categoriaService.add(dato).
-      subscribe(response => {
-        this.mensajeConfirmacion = 'Categoria registrada con éxito';
+    this.categoriaService.add(dato).subscribe(
+      response => {
+        this.mensajeConfirmacion = 'Categoría registrada con éxito';
+        
+        // Redirigir automáticamente a la lista de categorías después de la creación
         this.router.navigate(['/categoria/list']);
       },
-        error => {
-          console.error('Error al registrar la categoria:', error);
-        }
-      );
+      error => {
+        console.error('Error al registrar la categoría:', error);
+      }
+    );
   }
 
   requiresConfirmation(isConfirmed: boolean) {
     this.isConfirmed = isConfirmed;
+  }
+
+  volverALaLista() {
+    this.router.navigate(['/categoria/list']);
   }
 }

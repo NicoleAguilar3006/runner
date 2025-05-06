@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class CreateTallaComponent {
   form: FormGroup;
   mensajeConfirmacion: string = '';
+  titulo: string = '¿Cuál es tu talla?';
 
   constructor(
     private fb: FormBuilder,

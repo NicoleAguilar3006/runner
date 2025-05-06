@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class CreatePersonaComponent {
   form: FormGroup;
   mensajeConfirmacion: string = '';
+  titulo: string = 'Género'; 
 
   constructor(
     private fb: FormBuilder,

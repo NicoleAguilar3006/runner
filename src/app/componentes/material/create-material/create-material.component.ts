@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class CreateMaterialComponent {
   form: FormGroup;
   mensajeConfirmacion: string = '';
-
+  titulo: string = 'Registrar material';
   constructor(
     private fb: FormBuilder,
     private materialService: MaterialService,

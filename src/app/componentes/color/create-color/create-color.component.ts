@@ -19,6 +19,7 @@ export class CreateColorComponent {
   mensaje: string = '';
   isError: boolean = false;
   isSuccessful: boolean = false;
+  titulo: string = 'Indica tu color';
 
   constructor(
     private fb: FormBuilder, 
